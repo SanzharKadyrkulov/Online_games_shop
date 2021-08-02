@@ -1,9 +1,10 @@
 import React from 'react';
+import ProductList from './ProductList';
 
 const Home = () => {
     return (
         <div>
-            qawsdgfhbkjnkjhgc
+            <ProductList />
         </div>
     );
 };
