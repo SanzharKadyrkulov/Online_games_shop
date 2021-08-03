@@ -54,7 +54,7 @@ const cards = [1, 2, 3, 4, 5, 6]
 
 const ProductList = () => {
   const classes = useStyles()
-  const { productsData, getProductsData } = useProducts()
+  const { productsData, getProductsData, history } = useProducts()
   useEffect(() => {
     getProductsData()
   }, [])
@@ -93,7 +93,7 @@ const ProductList = () => {
                 <Button variant="contained" color="primary">Open Catalog</Button>
               </Grid>
               <Grid item>
-                <Button variant="outlined" color="primary">Learn Catalog</Button>
+                <Button onClick={() => history.push("/addproduct")} variant="outlined" color="primary">Add Card</Button>
               </Grid>
             </Grid>
           </div>
