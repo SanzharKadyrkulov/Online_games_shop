@@ -1,28 +1,18 @@
 {
-  "Products": [
-    {
-      "title": "Block Pistol",
-      "describtion": "Пушка заряженная не стреляет , Представляет , но не стреляет!",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTGS2r8QAF2edWG9F55mThLxYF9jmNPRDyZ3R_EuFTNFhgrtWp9v7OmgwQHaRNQMB4kyE&usqp=CAU",
-      "type": "ПП",
-      "price": 100,
-      "id": 1
-    },
-    {
-      "title": "Block Pistol",
-      "describtion": "Пушка заряженная не стреляет , Представляет , но не стреляет!",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTGS2r8QAF2edWG9F55mThLxYF9jmNPRDyZ3R_EuFTNFhgrtWp9v7OmgwQHaRNQMB4kyE&usqp=CAU",
-      "type": "ПП",
-      "price": 100,
-      "id": 2
-    },
-    {
-      "title": "Block Pistol",
-      "describtion": "Пушка заряженная не стреляет , Представляет , но не стреляет!",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTGS2r8QAF2edWG9F55mThLxYF9jmNPRDyZ3R_EuFTNFhgrtWp9v7OmgwQHaRNQMB4kyE&usqp=CAU",
-      "type": "ПП",
-      "price": 100,
-      "id": 3
-    }
-  ]
+    "Products": [
+        {
+            "title": "Block Pistol",
+            "describtion": "Пушка заряженная не стреляет , Представляет , но не стреляет!",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTGS2r8QAF2edWG9F55mThLxYF9jmNPRDyZ3R_EuFTNFhgrtWp9v7OmgwQHaRNQMB4kyE&usqp=CAU",
+            "type": "ПП",
+            "id": 1
+        },
+        {
+            "title": "Block Pistol",
+            "describtion": "Пушка заряженная не стреляет , Представляет , но не стреляет!",
+            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTGS2r8QAF2edWG9F55mThLxYF9jmNPRDyZ3R_EuFTNFhgrtWp9v7OmgwQHaRNQMB4kyE&usqp=CAU",
+            "type": "ПП",
+            "id": 2
+        }
+    ]
 }
