@@ -1,13 +1,14 @@
 import { Button, CardActions, CardContent, Typography } from "@material-ui/core";
 import { Container } from "@material-ui/core";
-import React from "react";
-import LayerIcon from '@material-ui/icons/Layers'
+import React, { useContext, useEffect } from "react";
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled'
 import { makeStyles } from "@material-ui/core/styles";
 import { Paper } from "@material-ui/core";
 import { Grid } from "@material-ui/core";
 import { Card } from "@material-ui/core";
 import { CardMedia } from "@material-ui/core";
+import { productContext, useProducts } from "../../contexts/ProductContext";
+import ProductCard from "./ProductCard";
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -54,6 +55,10 @@ const cards = [1, 2, 3, 4, 5, 6]
 
 const ProductList = () => {
     const classes = useStyles()
+    const { productsData, getProductsData } = useProducts()
+    useEffect(() => {
+        getProductsData()
+    }, [])
 
     return (
         <main>
@@ -97,34 +102,8 @@ const ProductList = () => {
         </div>
         <Container className={classes.cardGrid} maxWidth="md">
           <Grid container spacing={4}>
-            {cards.map((card) => (
-              <Grid item key={card} xs={12} sm={6} md={4}>
-                <Card className={classes.card}>
-                  <CardMedia
-                    className={classes.cardMedia}
-                    image="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTGS2r8QAF2edWG9F55mThLxYF9jmNPRDyZ3R_EuFTNFhgrtWp9v7OmgwQHaRNQMB4kyE&usqp=CAU"
-                    title="Image Title"
-                  />
-                  <CardContent className={classes.cardContent}>
-                    <Typography variant="h5" gutterBottom>
-                      Block Pistol
-                    </Typography>
-                    <Typography >
-                      Пушка заряженная не стреляет , Представляет , но не стреляет!
-                    </Typography>
-                  </CardContent>
-                  <CardActions>
-                    <Button size="small" color="primary">
-                      View
-                    </Button>
-                    <Button size="small" color="primary">
-                      Edit
-                    </Button>
-                    <LayerIcon />
-                    <PlayCircleFilledIcon />
-                  </CardActions>
-                </Card>
-              </Grid>
+            {productsData && productsData.map((item) => (
+              <ProductCard item={item}/>
             ))}
           </Grid>
         </Container>
