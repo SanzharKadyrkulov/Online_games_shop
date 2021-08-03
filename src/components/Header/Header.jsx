@@ -4,6 +4,7 @@ import MenuIcon from '@material-ui/icons/Menu'
 
 import { Box } from "@material-ui/core";
 import { makeStyles } from "@material-ui/core/styles";
+import { useProducts } from "../../contexts/ProductContext";
 
 
 const useStyles = makeStyles((theme) => ({
@@ -50,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
 
 const Header = () => {
     const classes = useStyles()
+    const {history} = useProducts()
     const [open, setOpen] = React.useState(false)
   const handleClose = () => {
     setOpen(false)
@@ -64,7 +66,7 @@ const Header = () => {
             <IconButton edge="start" color="inherit" aria-label="menu" className={classes.menuButton}>
               <MenuIcon />
             </IconButton>
-            <Typography variant="h4" className={classes.title}>
+            <Typography onClick={() => history.push("/")} variant="h4" className={classes.title}>
               War Dogs
             </Typography>
             <Box mr={3}>

@@ -38,10 +38,15 @@ const ProductContextProvider = ({children}) => {
             payload: data
         })
     }
+    const addProduct = async (product) => {
+        const data = await axios.post(JSON_API_PRODUCTS, product)
+        getProductsData()
+    }
     const values = {
         history,
         productsData: state.productsData,
         getProductsData,
+        addProduct,
 
     }
     return (

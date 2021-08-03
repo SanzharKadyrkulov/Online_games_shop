@@ -57,14 +57,17 @@ const ProductCard = ({item}) => {
                     title="Image Title"
                   />
                   <CardContent className={classes.cardContent}>
-                    <Typography variant="h5" gutterBottom>
+                    <Typography variant="h4" gutterBottom>
                       {item.title}
                     </Typography>
-                    <Typography >
+                    <Typography variant="h5" >
                       {item.type}
                     </Typography>
-                    <Typography >
+                    <Typography variant="p" >
                       {item.describtion}
+                    </Typography>
+                    <Typography variant="h6" gutterBottom>
+                      {item.price}$
                     </Typography>
                   </CardContent>
                   <CardActions>
