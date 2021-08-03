@@ -61,6 +61,9 @@ const ProductCard = ({item}) => {
                       {item.title}
                     </Typography>
                     <Typography >
+                      {item.type}
+                    </Typography>
+                    <Typography >
                       {item.describtion}
                     </Typography>
                   </CardContent>
