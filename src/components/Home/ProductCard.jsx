@@ -51,7 +51,7 @@ const ProductCard = ({item}) => {
     const classes = useStyles()
     const {history, deleteProduct} = useProducts()
     return (
-        <Grid item key={item.id} xs={12} sm={6} md={4}>
+        <Grid onClick={() => history.push(`/details/${item.id}`)} item key={item.id} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia
                     className={classes.cardMedia}
