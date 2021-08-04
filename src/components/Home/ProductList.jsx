@@ -61,7 +61,7 @@ const ProductList = () => {
   }, [])
 
   return (
-    <main>
+    <main style={{ backgroundImage: `url(https://lifeo.ru/wp-content/uploads/gifka-dozhd-1.gif)`, backgroundSize: "cover", backgroundPosition: "top" }}>
       <div className={classes.mainContent}>
         <Container maxWidth='sm'>
           <Typography variant='h2' align='center' color='textPrimary' gutterBottom>Our Heroes!</Typography>
@@ -70,11 +70,11 @@ const ProductList = () => {
             <Grid container spacing={4} justify="center">
 
               <Grid item>
-                <Button onClick={() => history.push("/addproduct")} variant="outlined" color="secondary">Add Hero</Button>
+                <Button onClick={() => history.push("/addproduct")} variant="outlined" color="primary">Add Hero</Button>
               </Grid>
             </Grid>
           </div>
-          <SideBar/>
+          <SideBar />
         </Container>
       </div>
       <Container className={classes.cardGrid} maxWidth="md">

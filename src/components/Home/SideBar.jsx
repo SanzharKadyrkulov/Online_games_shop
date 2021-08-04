@@ -14,7 +14,7 @@ const useStyles = makeStyles(theme => ({
 
 const SideBar = () => {
     const classes = useStyles()
-    const {getProductsData, history} = useProducts()
+    const { getProductsData, history } = useProducts()
     const getType = () => {
         const search = new URLSearchParams(history.location.search)
         return search.get('type')
@@ -28,7 +28,7 @@ const SideBar = () => {
 
 
     const handleChangeType = (e) => {
-        if(e.target.value === 'all') {
+        if (e.target.value === 'all') {
             const search = new URLSearchParams(history.location.search)
             search.delete('type')
             history.push(`${history.location.pathname}?${search.toString()}`)
@@ -61,20 +61,21 @@ const SideBar = () => {
 
     return (
         <Grid item md={3}>
-            <Paper elevation={2} className={classes.paper}>
+            <Paper style={{ backgroundImage: `url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjyKJgHdUe33-cpfz3mqJyww_vI4JC4O6lJw&usqp=CAU)`, backgroundSize: "cover", backgroundPosition: "top" }}
+                elevation={2} className={classes.paper}>
                 <FormControl component='fieldset'>
                     <FormLabel component='legend'>Brand</FormLabel>
                     <RadioGroup value={type} onChange={handleChangeType}>
-                        <FormControlLabel value='Fighter' control={<Radio/>} label="Fighter"/>
-                        <FormControlLabel value='Magician' control={<Radio/>} label="Magician"/>
-                        <FormControlLabel value='Shooter' control={<Radio/>} label="Shooter"/>
-                        <FormControlLabel value='all' control={<Radio/>} label="All"/>
+                        <FormControlLabel value='Fighter' control={<Radio />} label="Fighter" />
+                        <FormControlLabel value='Magician' control={<Radio />} label="Magician" />
+                        <FormControlLabel value='Shooter' control={<Radio />} label="Shooter" />
+                        <FormControlLabel value='all' control={<Radio />} label="All" />
                     </RadioGroup>
                 </FormControl>
 
                 <Grid>
-                    <Slider value={price} onChange={handleChangePrice} valueLabelDisplay='auto' aria-labelledby='discrette-slider' min={100} max={1000}/>
-                    <Button onClick={resetPrice} variant='outlined' color="primary">Reset price</Button>
+                    <Slider color="secondary" value={price} onChange={handleChangePrice} valueLabelDisplay='auto' aria-labelledby='discrette-slider' min={100} max={1000} />
+                    <Button onClick={resetPrice} variant='outlined' color="secondary">Reset price</Button>
                 </Grid>
             </Paper>
         </Grid>
