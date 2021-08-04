@@ -4,12 +4,6 @@ import { Button, Container, Nav, Navbar, Form, FormControl } from 'react-bootstr
 import logo from './images.png';
 
 export default class Header extends Component {
-  const handleValue = (e) => {
-    const search = new URLSearchParams(history.location.search)
-    search.set('q', e.target.value)
-    history.push(`${history.location.pathname}?${search.toString()}`)
-    getProductsData()
-  }
   render() {
     return (
       <>
@@ -40,7 +34,7 @@ export default class Header extends Component {
                 type="text"
                 placeholder="Search"
                 className="mr-sm-4"
-                onChange={(e) => handleValue(e)}
+                
               />
             </Form>
           </Container>
