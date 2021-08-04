@@ -1,93 +1,50 @@
-import { BottomNavigationAction, Typography } from "@material-ui/core";
-import React from "react";
-import RestoreIcon from '@material-ui/icons/Restore'
-import FavoriteIcon from '@material-ui/icons/Favorite'
-import LocationOnIcon from '@material-ui/icons/LocationOn'
-import FolderIcon from '@material-ui/icons/Folder'
-import { makeStyles } from "@material-ui/core/styles";
-
-import { BottomNavigation } from "@material-ui/core";
-
-
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import Button from '@material-ui/core/Button';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu'; 
+import { createTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/styles';
+import grey from '@material-ui/core/colors/grey';
+const theme = createTheme({
+  palette: {
+    primary: grey
+  },
+});
 const useStyles = makeStyles((theme) => ({
-    root: {
-      flexGrow: 1
-    },
-    menuButton: {
-      marginRight: theme.spacing(1)
-    },
-    title: {
-      flexGrow: 1
-    },
-    mainFeaturesPost: {
-      position: 'relative',
-      color: theme.palette.common.white,
-      marginBottom: theme.spacing(4),
-      backgroundSize: 'cover',
-      backgroundRepeat: 'no-repeat',
-      backgroundPosition: 'center',
-    },
-    overlay: {
-      position: 'absolute',
-      top: 0,
-      bottom: 0,
-      left: 0,
-      right: 0,
-      backgroundOverlay: 'rgba(0,0,0,.3)',
-    },
-    mainFeaturesPostContent: {
-      position: 'relative',
-      padding: theme.spacing(6),
-      marginTop: theme.spacing(8)
-    },
-    cardMedia: {
-      paddingTop: '56.25%'
-    },
-    cardContent: {
-      flexGrow: 1
-    },
-    cardGrid: {
-      marginTop: theme.spacing(4)
-    }
-  }))
+  root: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginRight: theme.spacing(2),
+  },
+  title: {
+    flexGrow: 1,
+  },
+}));
 
 const Footer = () => {
     const classes = useStyles()
-  const [value, setValue] = React.useState('recents')
-  const handleChange = (event, newValue) => {
-    setValue(newValue)
-  }
     return (
-        <footer>
-        <Typography variant="h6" align="center" gutterBottom>
-          Наши данные
-        </Typography>
-        <BottomNavigation value={value} onChange={handleChange} className={classes.root} >
-          <BottomNavigationAction
-            label="Recents"
-            value="recents"
-            icon={<RestoreIcon />}
-          />
-          <BottomNavigationAction
-            label="Favorites"
-            value="favorites"
-            icon={<FavoriteIcon />}
-          />
-          <BottomNavigationAction
-            label="Nearby"
-            value="nearby"
-            icon={<LocationOnIcon />}
-          />
-          <BottomNavigationAction
-            label="Folder"
-            value="folder"
-            icon={<FolderIcon />}
-          />
-        </BottomNavigation>
-        <Typography align="center" color="textSecondary" component="p" variant="subtitle1 ">
-          Как же я долго мучался с этим Футером
-        </Typography>
-      </footer>
+      <ThemeProvider theme={theme}>
+      <div className={classes.root}>
+      <AppBar color='primary' position="static">
+        <Toolbar>
+          {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
+            <MenuIcon />
+          </IconButton> */}
+          <Typography variant="h6" className={classes.title}>
+            News
+          </Typography>
+          <Button color="inherit">Login</Button>
+        </Toolbar>
+      </AppBar>
+    </div>
+
+      </ThemeProvider>
     );
 };
 

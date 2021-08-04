@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => ({
       backgroundSize: 'cover',
       backgroundRepeat: 'no-repeat',
       backgroundPosition: 'center',
+      marginBottom: theme.spacing(0)
     },
     overlay: {
       position: 'absolute',
@@ -35,7 +36,7 @@ const useStyles = makeStyles((theme) => ({
     },
     mainFeaturesPostContent: {
       position: 'relative',
-      padding: theme.spacing(6),
+      padding: theme.spacing(16.6),
       marginTop: theme.spacing(8)
     },
     cardMedia: {

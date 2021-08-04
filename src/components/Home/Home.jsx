@@ -14,8 +14,7 @@ const Home = () => {
     const classes = useStyles()
     return (
         <Grid className={classes.sideBar} spacing-md={3} spacing-sm={3}>
-            <Welcome />
-            <ProductList />
+            <Welcome/>
         </Grid>
     );
 };

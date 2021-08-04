@@ -1,8 +1,9 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Grid, IconButton, makeStyles, Typography } from '@material-ui/core';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled'
 import { useProducts } from '../../contexts/ProductContext';
 import DeleteIcon from '@material-ui/icons/Delete';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -47,51 +48,72 @@ const useStyles = makeStyles((theme) => ({
   }
 }))
 
-const ProductCard = ({ item }) => {
-  const classes = useStyles()
-  const { history, deleteProduct } = useProducts()
-  return (
-    <Grid onClick={() => history.push(`/details/${item.id}`)} item key={item.id} xs={12} sm={6} md={4}>
-      <Card style={{ backgroundImage: `url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpgkJa5E5VqVNgN3nl5R8gKvmw-y7QKYShLw&usqp=CAU)`, backgroundSize: "cover", backgroundPosition: "top" }}
-        className={classes.card}>
-        <CardMedia
-          className={classes.cardMedia}
-          image={item.image}
-          title="Image Title"
-        />
-        <CardContent className={classes.cardContent}>
-          <Typography variant="h4" gutterBottom>
-            {item.title}
-          </Typography>
-          <Typography variant="h5" >
-            {item.type}
-          </Typography>
-          <Typography variant="h6" gutterBottom>
-            {item.price}$
-          </Typography>
-        </CardContent>
-        <CardActions>
-          <Button onClick={() => history.push(`/details/${item.id}`)} size="small" color="primary">
-            View
-          </Button>
-          <Button onClick={() => history.push(`/editproduct/${item.id}`)} size="small" color="primary">
-            Edit
-          </Button>
-          <IconButton
-            edge="end"
-            aria-label="account of current user"
-
-            aria-haspopup="true"
-            onClick={() => deleteProduct(item.id)}
-            color="primary"
-          >
-            <DeleteIcon />
-          </IconButton>
-          <PlayCircleFilledIcon color='primary' />
-        </CardActions>
-      </Card>
-    </Grid>
-  );
+const ProductCard = ({item}) => {
+    const classes = useStyles()
+    const {history, deleteProduct, addProductToCart, cart, getCart} = useProducts()
+    const [newCart, setNewCart] = useState(null)
+    useEffect(() => {
+      getCart()
+    },[])
+    useEffect(() => {
+      setNewCart(cart);
+    },[cart])
+    console.log(newCart, 'this is cart')
+    const checkItemInCart = (id) => {
+      console.log('HERE', newCart)
+      if(newCart && newCart.products){
+        const foundItem = newCart?.products.find((product) => product.item.id===id)
+        return foundItem ? 'secondary': 'default'
+      } 
+    }
+    return (
+        <Grid  item key={item.id} xs={12} sm={6} md={4}>
+                <Card className={classes.card}>
+                  <CardMedia
+                    onClick={() => history.push(`/details/${item.id}`)}
+                    className={classes.cardMedia}
+                    image={item.image}
+                    title="Image Title"
+                  />
+                  <CardContent className={classes.cardContent}>
+                    <Typography variant="h4" gutterBottom>
+                      {item.title}
+                    </Typography>
+                    <Typography variant="h5" >
+                      {item.type}
+                    </Typography>
+                    <Typography variant="h6" gutterBottom>
+                      {item.price}$
+                    </Typography>
+                  </CardContent>
+                  <CardActions>
+                    <Button onClick={() => history.push(`/details/${item.id}`)} size="small" color="primary">
+                      View
+                    </Button>
+                    <Button onClick={() => history.push(`/editproduct/${item.id}`)} size="small" color="primary">
+                      Edit
+                    </Button>
+                    <IconButton
+              edge="end"
+              aria-label="account of current user"
+              
+              aria-haspopup="true"
+              onClick={() => deleteProduct(item.id)}
+              color="primary"
+            >
+              <DeleteIcon />
+            </IconButton>
+            <IconButton 
+                color={checkItemInCart(item.id)}
+                aria-label="add to favorites"
+                onClick={() => addProductToCart(item)}
+                >
+                <FavoriteIcon />
+                </IconButton>
+                  </CardActions>
+                </Card>
+              </Grid>
+    );
 };
 
 export default ProductCard;
