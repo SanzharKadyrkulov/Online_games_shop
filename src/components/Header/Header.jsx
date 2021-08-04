@@ -4,6 +4,7 @@ import { Button, Container, Nav, Navbar, Form, FormControl } from 'react-bootstr
 import logo from './images.png';
 
 export default class Header extends Component {
+
   render() {
     return (
       <>
@@ -34,7 +35,7 @@ export default class Header extends Component {
                 type="text"
                 placeholder="Search"
                 className="mr-sm-4"
-                
+              // onChange={(e) => handleValue(e)}
               />
             </Form>
           </Container>
