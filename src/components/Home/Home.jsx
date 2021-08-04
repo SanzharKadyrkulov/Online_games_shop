@@ -1,7 +1,6 @@
 import { Grid, makeStyles } from '@material-ui/core';
 import React from 'react';
 import ProductList from './ProductList';
-import SideBar from './SideBar';
 import Welcome from './Welcome';
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -16,7 +15,6 @@ const Home = () => {
     return (
         <Grid className={classes.sideBar} spacing-md={3} spacing-sm={3}>
             <Welcome/>
-            <ProductList />
         </Grid>
     );
 };

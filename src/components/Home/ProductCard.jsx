@@ -1,8 +1,9 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Grid, IconButton, makeStyles, Typography } from '@material-ui/core';
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled'
 import { useProducts } from '../../contexts/ProductContext';
 import DeleteIcon from '@material-ui/icons/Delete';
+import FavoriteIcon from '@material-ui/icons/Favorite';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -49,11 +50,27 @@ const useStyles = makeStyles((theme) => ({
 
 const ProductCard = ({item}) => {
     const classes = useStyles()
-    const {history, deleteProduct} = useProducts()
+    const {history, deleteProduct, addProductToCart, cart, getCart} = useProducts()
+    const [newCart, setNewCart] = useState(null)
+    useEffect(() => {
+      getCart()
+    },[])
+    useEffect(() => {
+      setNewCart(cart);
+    },[cart])
+    console.log(newCart, 'this is cart')
+    const checkItemInCart = (id) => {
+      console.log('HERE', newCart)
+      if(newCart && newCart.products){
+        const foundItem = newCart?.products.find((product) => product.item.id===id)
+        return foundItem ? 'secondary': 'default'
+      } 
+    }
     return (
-        <Grid onClick={() => history.push(`/details/${item.id}`)} item key={item.id} xs={12} sm={6} md={4}>
+        <Grid  item key={item.id} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
                   <CardMedia
+                    onClick={() => history.push(`/details/${item.id}`)}
                     className={classes.cardMedia}
                     image={item.image}
                     title="Image Title"
@@ -86,7 +103,13 @@ const ProductCard = ({item}) => {
             >
               <DeleteIcon />
             </IconButton>
-                    <PlayCircleFilledIcon color='primary' />
+            <IconButton 
+                color={checkItemInCart(item.id)}
+                aria-label="add to favorites"
+                onClick={() => addProductToCart(item)}
+                >
+                <FavoriteIcon />
+                </IconButton>
                   </CardActions>
                 </Card>
               </Grid>

@@ -3,7 +3,6 @@ import React from 'react';
 import { Container, Nav, Navbar, Form, FormControl } from 'react-bootstrap';
 import { useProducts } from '../../contexts/ProductContext';
 import logo from './images.png';
-import {Link} from 'react-router-dom'
 
 const Header = () => {
   const {history, getProductsData} = useProducts()
@@ -35,7 +34,7 @@ const Header = () => {
                 <Nav.Link  href="/productlist" >Catalog</Nav.Link>
                 <Nav.Link href="/brend">Brend</Nav.Link>
                 <Nav.Link href="/sale">Sale</Nav.Link>
-                <Nav.Link href="/stock">Stock</Nav.Link>
+                <Nav.Link href="/cart">Busket</Nav.Link>
               </Nav>
             </Navbar.Collapse>
             <Form inline>
