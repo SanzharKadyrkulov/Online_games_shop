@@ -1,9 +1,11 @@
-import { AppBar, Button, Container, IconButton, Toolbar, Typography, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField } from "@material-ui/core";
+import { AppBar, Button, Container, IconButton, Toolbar, Typography, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, TextField, InputBase } from "@material-ui/core";
 import React from "react";
 import MenuIcon from '@material-ui/icons/Menu'
+import SearchIcon from '@material-ui/icons/Search'
+
 
 import { Box } from "@material-ui/core";
-import { makeStyles } from "@material-ui/core/styles";
+import { alpha, makeStyles } from "@material-ui/core/styles";
 import { useProducts } from "../../contexts/ProductContext";
 
 
@@ -46,18 +48,61 @@ const useStyles = makeStyles((theme) => ({
     },
     cardGrid: {
       marginTop: theme.spacing(4)
-    }
+    },
+    search: {
+      position: 'relative',
+      borderRadius: theme.shape.borderRadius,
+      backgroundColor: alpha(theme.palette.common.white, 0.15),
+      '&:hover': {
+        backgroundColor: alpha(theme.palette.common.white, 0.25),
+      },
+      marginRight: theme.spacing(2),
+      marginLeft: 0,
+      width: '100%',
+      [theme.breakpoints.up('sm')]: {
+        marginLeft: theme.spacing(3),
+        width: 'auto',
+      },
+    },
+    searchIcon: {
+      padding: theme.spacing(0, 2),
+      height: '100%',
+      position: 'absolute',
+      pointerEvents: 'none',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+    },
+    inputRoot: {
+      color: 'inherit',
+    },
+    inputInput: {
+      padding: theme.spacing(1, 1, 1, 0),
+      // vertical padding + font size from searchIcon
+      paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
+      transition: theme.transitions.create('width'),
+      width: '100%',
+      [theme.breakpoints.up('md')]: {
+        width: '20ch',
+      },
+    },
   }))
 
 const Header = () => {
     const classes = useStyles()
-    const {history} = useProducts()
+    const {history, getProductsData} = useProducts()
     const [open, setOpen] = React.useState(false)
   const handleClose = () => {
     setOpen(false)
   }
   const handleClickOpen = () => {
     setOpen(true)
+  }
+  const handleValue = (e) => {
+    const search = new URLSearchParams(history.location.search)
+    search.set('q', e.target.value)
+    history.push(`${history.location.pathname}?${search.toString()}`)
+    getProductsData()
   }
     return (
         <AppBar position="fixed">
@@ -69,6 +114,20 @@ const Header = () => {
             <Typography onClick={() => history.push("/")} variant="h4" className={classes.title}>
               War Dogs
             </Typography>
+            <div className={classes.search}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ 'aria-label': 'search' }}
+              onChange={(e) => handleValue(e)}
+            />
+          </div>
             <Box mr={3}>
               <Button color="inherit" variant="outlined" onClick={handleClickOpen}>log In</Button>
               <Dialog open={open} aria-labelledby="form-dialog-title">

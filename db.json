@@ -1,18 +1,28 @@
 {
-    "Products": [
-        {
-            "title": "Block Pistol",
-            "describtion": "Пушка заряженная не стреляет , Представляет , но не стреляет!",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTGS2r8QAF2edWG9F55mThLxYF9jmNPRDyZ3R_EuFTNFhgrtWp9v7OmgwQHaRNQMB4kyE&usqp=CAU",
-            "type": "ПП",
-            "id": 1
-        },
-        {
-            "title": "Block Pistol",
-            "describtion": "Пушка заряженная не стреляет , Представляет , но не стреляет!",
-            "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTGS2r8QAF2edWG9F55mThLxYF9jmNPRDyZ3R_EuFTNFhgrtWp9v7OmgwQHaRNQMB4kyE&usqp=CAU",
-            "type": "ПП",
-            "id": 2
-        }
-    ]
+  "Products": [
+    {
+      "title": "Block",
+      "describtion": "Пушка заряженная не стреляет , Представляет , но не стреляет!",
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTGS2r8QAF2edWG9F55mThLxYF9jmNPRDyZ3R_EuFTNFhgrtWp9v7OmgwQHaRNQMB4kyE&usqp=CAU",
+      "type": "ПП",
+      "price": 100,
+      "id": 1
+    },
+    {
+      "title": "Desert Eagle",
+      "describtion": "Пушка заряженная не стреляет , Представляет , но не стреляет!",
+      "image": "https://www.artilharia6.com/2863/magnum-research-desert-eagle-sts-6-mb.jpg",
+      "type": "Pistol",
+      "price": "100",
+      "id": 2
+    },
+    {
+      "title": "AK-47",
+      "describtion": "АК 47 Описание Калашниковым и принято на вооружение Советской Армии в 1949 году. Автоматика АК-47 работает по принципу отвода пороховых газов через отверстие в стенке ствола. Запирание ствола осуществляется поворотом затвора. ... Автомат Калашникова отличается высоким качеством изготовления, прост в обращении и при разборке.",
+      "image": "https://www.airsoft-gun.eu/14379-large_default/ak47-next-gen-type-3-aeg.jpg",
+      "type": "Rifles",
+      "price": "280",
+      "id": 3
+    }
+  ]
 }

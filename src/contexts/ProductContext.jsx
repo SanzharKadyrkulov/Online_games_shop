@@ -32,9 +32,18 @@ const ProductContextProvider = ({children}) => {
     const history = useHistory()
 
     const getProductsData = async () => {
-        const {data} = await axios.get(`${JSON_API_PRODUCTS}`)
+        const search = new URLSearchParams(history.location.search)
+        history.push(`${history.location.pathname}?${search.toString()}`)
+        const {data} = await axios.get(`${JSON_API_PRODUCTS}/${window.location.search}`)
         dispatch({
             type: ACTIONS.GET_PRODUCTS,
+            payload: data
+        })
+    }
+    const getProductDetails = async (id) => {
+        const {data} = await axios.get(`${JSON_API_PRODUCTS}/${id}`)
+        dispatch({
+            type: ACTIONS.GET_PRODUCT_DETAILS,
             payload: data
         })
     }
@@ -42,11 +51,23 @@ const ProductContextProvider = ({children}) => {
         const data = await axios.post(JSON_API_PRODUCTS, product)
         getProductsData()
     }
+    const editProduct = async (id, product) => {
+        const data = await axios.patch(`${JSON_API_PRODUCTS}/${id}`, product)
+        getProductsData()
+    }
+    const deleteProduct = async (id) => {
+        const data = await axios.delete(`${JSON_API_PRODUCTS}/${id}`)
+        getProductsData()
+    }
     const values = {
         history,
         productsData: state.productsData,
+        productDetails: state.productDetails,
         getProductsData,
+        getProductDetails,
         addProduct,
+        editProduct,
+        deleteProduct,
 
     }
     return (
