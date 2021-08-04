@@ -26,6 +26,33 @@
       "animation": "https://pa1.narvii.com/6946/b6c089f6a2d607d0a85afd6617d93494d4d74460r1-404-342_hq.gif",
       "price": 1000,
       "id": 3
+    },
+    {
+      "title": "Lesley",
+      "describtion": "Пушка заряженная так стреляет, что не успеваешь убежать",
+      "image": "https://i.pinimg.com/originals/5c/8b/39/5c8b394497513dd702b09a9dfe35f2f6.jpg",
+      "type": "Shooter",
+      "price": "32000",
+      "animation": "https://i0.wp.com/pa1.narvii.com/6880/acc5f3397313c853f86d81193c950f2dfcd8bf30r1-1000-1300_hq.gif",
+      "id": 4
+    },
+    {
+      "title": "Aldous",
+      "describtion": "Семь пуль не важно, самое главное в упоре убивает сразу.",
+      "image": "https://i.ytimg.com/vi/_DlOMUYqbgI/maxresdefault.jpg",
+      "type": "Fighter",
+      "price": "32000",
+      "animation": "https://i2.wp.com/media.giphy.com/media/i2ttDOQpd4rxhCodIE/giphy.gif?w=1170&ssl=1",
+      "id": 5
+    },
+    {
+      "title": "Eudora",
+      "describtion": "Пушка заряженная так стреляет, с одной пули вырубает.",
+      "image": "https://wallpapercave.com/wp/wp6850024.jpg",
+      "type": "Magician",
+      "price": "32000",
+      "animation": "https://pa1.narvii.com/7502/e22968587010bbd2eecca5fcd710b1ff9b324a40r1-555-428_hq.gif",
+      "id": 6
     }
   ]
 }
