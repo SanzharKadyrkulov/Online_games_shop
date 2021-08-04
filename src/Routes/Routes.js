@@ -9,14 +9,14 @@ import ProductContextProvider from '../contexts/ProductContext';
 const Routes = () => {
     return (
         <BrowserRouter>
-        <ProductContextProvider>
-            <Header/>
-            <Switch>
-                <Route exact path="/" component={Home}/>
-                <Route exact path='/addproduct' component={AddProduct}/>
-            </Switch>
-            <Footer/>
-        </ProductContextProvider>
+            <ProductContextProvider>
+                <Header />
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route exact path='/addproduct' component={AddProduct} />
+                </Switch>
+                <Footer />
+            </ProductContextProvider>
         </BrowserRouter>
     );
 };

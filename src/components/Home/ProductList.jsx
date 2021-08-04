@@ -50,7 +50,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(4)
   }
 }))
-const cards = [1, 2, 3, 4, 5, 6]
+// const cards = [1, 2, 3]
 
 const ProductList = () => {
   const classes = useStyles()
@@ -62,7 +62,7 @@ const ProductList = () => {
   return (
     <main>
       <Paper className={classes.mainFeaturesPost}
-        style={{ backgroundImage: `url(https://i.gifer.com/7SAB.gif)` }}>
+        style={{ backgroundImage: `url(https://www.meme-arsenal.com/memes/5fbe557a0e0340f388695294bde5b571.jpg)` }}>
         <Container fixed>
           <div className={classes.overlay} />
           <Grid container>
@@ -89,9 +89,7 @@ const ProductList = () => {
           <Typography variant='h5' align='center' colot='textSecondary' paragraph>Наши товары предназначены только для охоты  Покупая наш товар не стоить думать о плохом !!!</Typography>
           <div className={classes.mainButtons}>
             <Grid container spacing={4} justify="center">
-              <Grid item>
-                <Button variant="contained" color="primary">Open Catalog</Button>
-              </Grid>
+
               <Grid item>
                 <Button onClick={() => history.push("/addproduct")} variant="outlined" color="primary">Add Card</Button>
               </Grid>
