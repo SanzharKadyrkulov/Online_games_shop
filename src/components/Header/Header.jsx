@@ -1,14 +1,21 @@
 
-import React, { Component } from 'react';
-import { Button, Container, Nav, Navbar, Form, FormControl } from 'react-bootstrap';
+import React from 'react';
+import { Container, Nav, Navbar, Form, FormControl } from 'react-bootstrap';
+import { useProducts } from '../../contexts/ProductContext';
 import logo from './images.png';
 
-export default class Header extends Component {
+const Header = () => {
+  const {history, getProductsData} = useProducts()
+  const handleValue = (e) => {
+    const search = new URLSearchParams(history.location.search)
+    search.set('q', e.target.value)
+    history.push(`${history.location.pathname}?${search.toString()}`)
+    getProductsData()
+  }
 
-  render() {
     return (
       <>
-        <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
+        <Navbar fixed='top' collapseOnSelect expand="md" bg="dark" variant="dark">
           <Container>
             <Navbar.Brand href="/">
               <img
@@ -35,6 +42,7 @@ export default class Header extends Component {
                 type="text"
                 placeholder="Search"
                 className="mr-sm-4"
+                onChange={(e) => handleValue(e)}
               // onChange={(e) => handleValue(e)}
               />
             </Form>
@@ -42,5 +50,6 @@ export default class Header extends Component {
         </Navbar>
       </>
     );
-  }
 }
+
+export default Header;
