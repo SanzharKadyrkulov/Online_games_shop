@@ -62,7 +62,7 @@ const ProductList = () => {
   return (
     <main>
       <Paper className={classes.mainFeaturesPost}
-        style={{ backgroundImage: `url(https://www.meme-arsenal.com/memes/5fbe557a0e0340f388695294bde5b571.jpg)` }}>
+        style={{ backgroundImage: `url(https://cdnb.artstation.com/p/assets/images/images/028/965/037/original/arc-noir-00153112.gif?1596045955)` }}>
         <Container fixed>
           <div className={classes.overlay} />
           <Grid container>
