@@ -100,7 +100,7 @@ const ProductList = () => {
       <Container className={classes.cardGrid} maxWidth="md">
         <Grid container spacing={4}>
           {productsData && productsData.map((item) => (
-            <ProductCard item={item} />
+            <ProductCard key={item.id} item={item} />
           ))}
         </Grid>
       </Container>

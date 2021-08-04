@@ -1,7 +1,8 @@
-import { Button, Card, CardActions, CardContent, CardMedia, Grid, makeStyles, Typography } from '@material-ui/core';
+import { Button, Card, CardActions, CardContent, CardMedia, Grid, IconButton, makeStyles, Typography } from '@material-ui/core';
 import React from 'react';
-import LayerIcon from '@material-ui/icons/Layers'
 import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled'
+import { useProducts } from '../../contexts/ProductContext';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -48,6 +49,7 @@ const useStyles = makeStyles((theme) => ({
 
 const ProductCard = ({item}) => {
     const classes = useStyles()
+    const {history, deleteProduct} = useProducts()
     return (
         <Grid item key={item.id} xs={12} sm={6} md={4}>
                 <Card className={classes.card}>
@@ -63,22 +65,28 @@ const ProductCard = ({item}) => {
                     <Typography variant="h5" >
                       {item.type}
                     </Typography>
-                    <Typography variant="p" >
-                      {item.describtion}
-                    </Typography>
                     <Typography variant="h6" gutterBottom>
                       {item.price}$
                     </Typography>
                   </CardContent>
                   <CardActions>
-                    <Button size="small" color="primary">
+                    <Button onClick={() => history.push(`/details/${item.id}`)} size="small" color="primary">
                       View
                     </Button>
-                    <Button size="small" color="primary">
+                    <Button onClick={() => history.push(`/editproduct/${item.id}`)} size="small" color="primary">
                       Edit
                     </Button>
-                    <LayerIcon />
-                    <PlayCircleFilledIcon />
+                    <IconButton
+              edge="end"
+              aria-label="account of current user"
+              
+              aria-haspopup="true"
+              onClick={() => deleteProduct(item.id)}
+              color="primary"
+            >
+              <DeleteIcon />
+            </IconButton>
+                    <PlayCircleFilledIcon color='primary' />
                   </CardActions>
                 </Card>
               </Grid>
