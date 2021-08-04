@@ -8,6 +8,7 @@ import { Card } from "@material-ui/core";
 import { CardMedia } from "@material-ui/core";
 import { productContext, useProducts } from "../../contexts/ProductContext";
 import ProductCard from "./ProductCard";
+import SideBar from "./SideBar";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -61,27 +62,6 @@ const ProductList = () => {
 
   return (
     <main>
-      <Paper className={classes.mainFeaturesPost}
-        style={{ backgroundImage: `url(https://cdnb.artstation.com/p/assets/images/images/028/965/037/original/arc-noir-00153112.gif?1596045955)`, backgroundSize: "cover", backgroundPosition: "top" }}>
-        <Container fixed>
-          <div className={classes.overlay} />
-          <Grid container>
-            <Grid item md={6}>
-              <div className={classes.mainFeaturesPostContent}>
-                <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                  Mobile Legends:
-                </Typography>
-                <Typography component="h3" color="inherit" paragraph>
-                  Mobile Legends: Bang Bang — игра в жанре multiplayer online battle arena (MOBA), разработанная для мобильных устройств. ... В игре есть карта с изображением таймингов "Баффов" И полоской здоровья на иконке героев. В каждой команде есть пять игроков, каждый из которых управляет персонажем, известным как «герой»
-                </Typography>
-                <Button variant="contained" color="secondary">
-                  Learn More
-                </Button>
-              </div>
-            </Grid>
-          </Grid>
-        </Container>
-      </Paper>
       <div className={classes.mainContent}>
         <Container maxWidth='sm'>
           <Typography variant='h2' align='center' color='textPrimary' gutterBottom>Our Heroes!</Typography>
@@ -94,6 +74,7 @@ const ProductList = () => {
               </Grid>
             </Grid>
           </div>
+          <SideBar/>
         </Container>
       </div>
       <Container className={classes.cardGrid} maxWidth="md">

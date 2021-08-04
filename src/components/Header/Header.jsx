@@ -3,6 +3,7 @@ import React from 'react';
 import { Container, Nav, Navbar, Form, FormControl } from 'react-bootstrap';
 import { useProducts } from '../../contexts/ProductContext';
 import logo from './images.png';
+import {Link} from 'react-router-dom'
 
 const Header = () => {
   const {history, getProductsData} = useProducts()
@@ -15,7 +16,7 @@ const Header = () => {
 
     return (
       <>
-        <Navbar fixed='top' collapseOnSelect expand="md" bg="dark" variant="dark">
+        <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
           <Container>
             <Navbar.Brand href="/">
               <img
@@ -31,7 +32,7 @@ const Header = () => {
               <Nav className="mr-auto">
                 <Nav.Link href="/">Home</Nav.Link>
                 <Nav.Link href="/about">About us</Nav.Link>
-                <Nav.Link href="/catalog">Catalog</Nav.Link>
+                <Nav.Link  href="/productlist" >Catalog</Nav.Link>
                 <Nav.Link href="/brend">Brend</Nav.Link>
                 <Nav.Link href="/sale">Sale</Nav.Link>
                 <Nav.Link href="/stock">Stock</Nav.Link>
