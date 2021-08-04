@@ -4,7 +4,7 @@ import ProductList from './ProductList';
 
 const Home = () => {
     return (
-        <Grid container spacing-md={3} spacing-sm={3}>
+        <Grid spacing-md={3} spacing-sm={3}>
             <ProductList />
         </Grid>
     );
