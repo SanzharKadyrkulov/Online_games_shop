@@ -62,18 +62,17 @@ const ProductList = () => {
   return (
     <main>
       <Paper className={classes.mainFeaturesPost}
-        style={{ backgroundImage: `url(https://cdnb.artstation.com/p/assets/images/images/028/965/037/original/arc-noir-00153112.gif?1596045955)` }}>
+        style={{ backgroundImage: `url(https://cdnb.artstation.com/p/assets/images/images/028/965/037/original/arc-noir-00153112.gif?1596045955)`, backgroundSize: "cover", backgroundPosition: "top" }}>
         <Container fixed>
           <div className={classes.overlay} />
           <Grid container>
             <Grid item md={6}>
               <div className={classes.mainFeaturesPostContent}>
                 <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                  Хочешь что нибудь  приобрести?
+                  Mobile Legends:
                 </Typography>
-                <Typography component="h5" color="inherit" paragraph>
-                  АК 47 Описание
-                  Калашниковым и принято на вооружение Советской Армии в 1949 году. Автоматика АК-47 работает по принципу отвода пороховых газов через отверстие в стенке ствола. Запирание ствола осуществляется поворотом затвора. ... Автомат Калашникова отличается высоким качеством изготовления, прост в обращении и при разборке.
+                <Typography component="h3" color="inherit" paragraph>
+                  Mobile Legends: Bang Bang — игра в жанре multiplayer online battle arena (MOBA), разработанная для мобильных устройств. ... В игре есть карта с изображением таймингов "Баффов" И полоской здоровья на иконке героев. В каждой команде есть пять игроков, каждый из которых управляет персонажем, известным как «герой»
                 </Typography>
                 <Button variant="contained" color="secondary">
                   Learn More
@@ -85,13 +84,13 @@ const ProductList = () => {
       </Paper>
       <div className={classes.mainContent}>
         <Container maxWidth='sm'>
-          <Typography variant='h2' align='center' colot='textPrimary' gutterBottom>Наши товары!</Typography>
-          <Typography variant='h5' align='center' colot='textSecondary' paragraph>Наши товары предназначены только для охоты  Покупая наш товар не стоить думать о плохом !!!</Typography>
+          <Typography variant='h2' align='center' color='textPrimary' gutterBottom>Our Heroes!</Typography>
+
           <div className={classes.mainButtons}>
             <Grid container spacing={4} justify="center">
 
               <Grid item>
-                <Button onClick={() => history.push("/addproduct")} variant="outlined" color="primary">Add Card</Button>
+                <Button onClick={() => history.push("/addproduct")} variant="outlined" color="secondary">Add Hero</Button>
               </Grid>
             </Grid>
           </div>
