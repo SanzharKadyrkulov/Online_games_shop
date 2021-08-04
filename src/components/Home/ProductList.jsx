@@ -62,7 +62,7 @@ const ProductList = () => {
   return (
     <main>
       <Paper className={classes.mainFeaturesPost}
-        style={{ backgroundImage: `url(https://i.gifer.com/7SAB.gif)` }}>
+        style={{ backgroundImage: `url(https://img1.goodfon.com/wallpaper/nbig/0/2f/gun-smoke-blue-black-desktop.jpg)` }}>
         <Container fixed>
           <div className={classes.overlay} />
           <Grid container>
@@ -102,7 +102,7 @@ const ProductList = () => {
       <Container className={classes.cardGrid} maxWidth="md">
         <Grid container spacing={4}>
           {productsData && productsData.map((item) => (
-            <ProductCard item={item} />
+            <ProductCard key={item.id} item={item} />
           ))}
         </Grid>
       </Container>

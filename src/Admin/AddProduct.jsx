@@ -41,7 +41,7 @@ const AddProduct = () => {
     }
     const [product, setProduct] = useState({
         title: "",
-        description: '',
+        describtion: '',
         image: '',
         type: '',
         price: 0,
@@ -70,9 +70,9 @@ const AddProduct = () => {
                 onChange={handleInp}
                 />
                 <TextField 
-                name="description"
+                name="describtion"
                 variant="outlined"
-                label='Description'
+                label='Describtion'
                 onChange={handleInp}
                 className={classes.textfield}
                 />
