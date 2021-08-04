@@ -3,24 +3,27 @@
     {
       "title": "Yu Zhong",
       "describtion": "Семь пуль не важно, самое главное в упоре убивает сразу.",
-      "image": "https://cdna.artstation.com/p/assets/images/images/029/479/940/original/foritis-wong-2ml-yu-zhong-black-dragon.gif?1597687812",
+      "image": "https://cdn.shortpixel.ai/client/q_glossy,ret_img,w_800,h_450/https://clubmobilelegends.com/wp-content/uploads/2020/06/Black-Dragon-Yu-Zhong.jpg",
       "type": "Fighter",
+      "animation": "https://cdna.artstation.com/p/assets/images/images/029/479/940/original/foritis-wong-2ml-yu-zhong-black-dragon.gif?1597687812",
       "price": 100,
       "id": 1
     },
     {
       "title": "Luo Yi",
       "describtion": "Пушка заряженная так стреляет, с одной пули вырубает.",
-      "image": "https://cdna.artstation.com/p/assets/images/images/026/749/984/original/arc-noir-2020516.gif?1589615661",
+      "image": "https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/de2dfdf5-c95c-4fd9-a2b7-e2a65effa69b/dei8zq9-41cb415d-538f-44c3-a12a-d0fb4b9439af.jpg/v1/fill/w_1280,h_1280,q_75,strp/luo_yi___mobile_legends_bang_bang_fanart_by_imartsydionne_dei8zq9-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI4MCIsInBhdGgiOiJcL2ZcL2RlMmRmZGY1LWM5NWMtNGZkOS1hMmI3LWUyYTY1ZWZmYTY5YlwvZGVpOHpxOS00MWNiNDE1ZC01MzhmLTQ0YzMtYTEyYS1kMGZiNGI5NDM5YWYuanBnIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.z8-ZRA2yoaj1ak96J8rcEYosmKDmdauEplJlyz6gpFE",
       "type": "Magician",
+      "animation": "https://cdna.artstation.com/p/assets/images/images/026/749/984/original/arc-noir-2020516.gif?1589615661",
       "price": 500,
       "id": 2
     },
     {
       "title": "Miya",
       "describtion": "Пушка заряженная так стреляет, что не успеваешь убежать",
-      "image": "https://pa1.narvii.com/6946/b6c089f6a2d607d0a85afd6617d93494d4d74460r1-404-342_hq.gif",
+      "image": "https://cdn.oneesports.gg/cdn-data/wp-content/uploads/2020/07/MLBB_Miya_BurningBow_skin-1024x576.jpg",
       "type": "Shooter",
+      "animation": "https://pa1.narvii.com/6946/b6c089f6a2d607d0a85afd6617d93494d4d74460r1-404-342_hq.gif",
       "price": 1000,
       "id": 3
     }
