@@ -21,6 +21,7 @@ const Routes = () => {
             </Switch>
             <Footer/>
         </ProductContextProvider>
+
         </BrowserRouter>
     );
 };
