@@ -43,7 +43,7 @@ const EditProduct = () => {
 
     const handleEdit = async (id, product) => {
         const data = await editProduct(id, product)
-        history.push('/')
+        history.push('/productlist')
     }
     const [product, setProduct] = useState(productDetails)
     useEffect(() => {

@@ -49,6 +49,10 @@ const useStyles = makeStyles((theme) => ({
   },
   cardGrid: {
     marginTop: theme.spacing(4)
+  },
+  blabla: {
+    flexDirection:'column',
+    alignItems: 'center'
   }
 }))
 // const cards = [1, 2, 3]
@@ -61,20 +65,20 @@ const ProductList = () => {
   }, [])
 
   return (
-    <main style={{ backgroundImage: `url(https://lifeo.ru/wp-content/uploads/gifka-dozhd-1.gif)`, backgroundSize: "cover", backgroundPosition: "top" }}>
+    <main style={{ backgroundImage: `url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa9MkfPdzoZhI_XaywgENkathPU73TZM3O5A&usqp=CAU)`, backgroundSize: "cover", backgroundPosition: "top" }}>
       <div className={classes.mainContent}>
         <Container maxWidth='sm'>
           <Typography variant='h2' align='center' color='textPrimary' gutterBottom>Our Heroes!</Typography>
 
           <div className={classes.mainButtons}>
-            <Grid container spacing={4} justify="center">
+            <Grid className={classes.blabla} container spacing={3} justify="center">
 
               <Grid item>
-                <Button onClick={() => history.push("/addproduct")} variant="outlined" color="primary">Add Hero</Button>
+                <Button onClick={() => history.push("/addproduct")} variant="outlined" color="secondary">Add Hero</Button>
               </Grid>
+          <SideBar />
             </Grid>
           </div>
-          <SideBar />
         </Container>
       </div>
       <Container className={classes.cardGrid} maxWidth="md">

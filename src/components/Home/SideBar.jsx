@@ -1,15 +1,18 @@
 import { FormControl, FormLabel, Grid, Paper, FormControlLabel, RadioGroup, Radio, makeStyles, Slider, Button } from '@material-ui/core';
+import { blue } from '@material-ui/core/colors';
 import React from 'react';
 import { useState } from 'react';
 import { useProducts } from '../../contexts/ProductContext';
 
 const useStyles = makeStyles(theme => ({
     paper: {
-        marginRight: '20px',
-        marginBottom: '20px',
         minWidth: '170px',
-        maxWidth: '350px'
-    }
+        maxWidth: '350px',
+        padding: theme.spacing(2)
+    },
+    container: {
+        padding: theme.spacing(2)
+    },
 }))
 
 const SideBar = () => {
@@ -60,11 +63,11 @@ const SideBar = () => {
     }
 
     return (
-        <Grid item md={3}>
-            <Paper style={{ backgroundImage: `url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjyKJgHdUe33-cpfz3mqJyww_vI4JC4O6lJw&usqp=CAU)`, backgroundSize: "cover", backgroundPosition: "top" }}
+        <Grid  container md={3}>
+            <Paper style={{  backgroundSize: "cover", backgroundPosition: "top", backgroundColor: 'transparent' }}
                 elevation={2} className={classes.paper}>
                 <FormControl component='fieldset'>
-                    <FormLabel component='legend'>Brand</FormLabel>
+                    <FormLabel component='legend'>Type</FormLabel>
                     <RadioGroup value={type} onChange={handleChangeType}>
                         <FormControlLabel value='Fighter' control={<Radio />} label="Fighter" />
                         <FormControlLabel value='Magician' control={<Radio />} label="Magician" />
@@ -74,8 +77,8 @@ const SideBar = () => {
                 </FormControl>
 
                 <Grid>
-                    <Slider color="secondary" value={price} onChange={handleChangePrice} valueLabelDisplay='auto' aria-labelledby='discrette-slider' min={100} max={1000} />
-                    <Button onClick={resetPrice} variant='outlined' color="secondary">Reset price</Button>
+                    <Slider color="primary" value={price} onChange={handleChangePrice} valueLabelDisplay='auto' aria-labelledby='discrette-slider' min={14000} max={32000} />
+                    <Button onClick={resetPrice} variant='contained' color="white" >Reset price</Button>
                 </Grid>
             </Paper>
         </Grid>

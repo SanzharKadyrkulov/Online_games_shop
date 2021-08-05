@@ -15,7 +15,7 @@ const Header = () => {
 
   return (
     <>
-      <Navbar fixed="top" collapseOnSelect expand="md" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
         <Container>
           <Navbar.Brand href="/">
             <img
@@ -34,7 +34,7 @@ const Header = () => {
               <Nav.Link href="/productlist" >Catalog</Nav.Link>
               <Nav.Link href="/brend">Brend</Nav.Link>
               <Nav.Link href="/sale">Sale</Nav.Link>
-              <Nav.Link href="/stock">Stock</Nav.Link>
+              <Nav.Link href="/cart">Busket</Nav.Link>
             </Nav>
           </Navbar.Collapse>
           <Form inline>
