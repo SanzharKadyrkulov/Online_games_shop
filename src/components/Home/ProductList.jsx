@@ -49,7 +49,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: theme.spacing(4)
   },
   blabla: {
-    flexDirection:'column',
+    flexDirection: 'column',
     alignItems: 'center'
   }
 }))
@@ -61,12 +61,12 @@ const ProductList = () => {
   const getCurrentPage = () => {
     const search = new URLSearchParams(window.location.search)
 
-    if(!search.get('_page')){
-        return 1
+    if (!search.get('_page')) {
+      return 1
     }
     return search.get('_page')
-}
-const [page, setPage] = useState(getCurrentPage())
+  }
+  const [page, setPage] = useState(getCurrentPage())
   useEffect(() => {
     getProductsData()
   }, [])
@@ -77,7 +77,7 @@ const [page, setPage] = useState(getCurrentPage())
     history.push(`${history.location.pathname}?${search.toString()}`)
     getProductsData()
     setPage(page)
-}
+  }
 
   return (
     <main style={{ backgroundImage: `url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa9MkfPdzoZhI_XaywgENkathPU73TZM3O5A&usqp=CAU)`, backgroundSize: "cover", backgroundPosition: "top" }}>
@@ -91,7 +91,7 @@ const [page, setPage] = useState(getCurrentPage())
               <Grid item>
                 <Button onClick={() => history.push("/addproduct")} variant="outlined" color="secondary">Add Hero</Button>
               </Grid>
-          <SideBar />
+              <SideBar />
             </Grid>
           </div>
         </Container>
@@ -102,8 +102,8 @@ const [page, setPage] = useState(getCurrentPage())
             <ProductCard key={item.id} item={item} />
           ))}
         </Grid>
-        <div style={{marginLeft: '350px',marginTop:'20px'}}>
-            <Pagination count={pages} color="primary" page={+page} onChange={handlePage} />
+        <div style={{ marginLeft: '350px', marginTop: '20px' }}>
+          <Pagination count={pages} color="primary" page={+page} onChange={handlePage} />
         </div>
       </Container>
     </main>

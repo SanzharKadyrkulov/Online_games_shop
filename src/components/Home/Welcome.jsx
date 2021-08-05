@@ -29,7 +29,7 @@ const Welcome = () => {
   const classes = useStyles()
   return (
     <Paper className={classes.mainFeaturesPost}
-      style={{ backgroundImage: `url(https://sm.ign.com/ign_ru/screenshot/default/kopiia-logo_h5c8.jpg)`, backgroundSize: "cover", backgroundPosition: "top" }}>
+      style={{ backgroundImage: `url(https://sm.ign.com/ign_ru/screenshot/default/kopiia-logo_h5c8.jpg)`, backgroundSize: "cover", backgroundPosition: "center" }}>
       <Container fixed>
         <div className={classes.overlay} />
         <Grid container>

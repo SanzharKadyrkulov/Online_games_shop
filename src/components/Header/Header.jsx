@@ -4,11 +4,13 @@ import { useEffect } from 'react';
 import { Container, Nav, Navbar, Form, FormControl, Button } from 'react-bootstrap';
 import { useAuth } from '../../contexts/AuthContext';
 import { useProducts } from '../../contexts/ProductContext';
+import BoopButton from '../../Song/Song';
+import Song from '../../Song/Song';
 import logo from './images.png';
 
 const Header = () => {
   const { history, getProductsData } = useProducts()
-  const {user, logout} = useAuth()
+  const { user, logout } = useAuth()
 
   const handleValue = (e) => {
     const search = new URLSearchParams(history.location.search)
@@ -18,7 +20,7 @@ const Header = () => {
   }
   useEffect(() => {
     console.log(user);
-  },[user])
+  }, [user])
   const handleLogout = () => {
     logout()
   }
@@ -39,6 +41,7 @@ const Header = () => {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
+              <Song />
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/about">About us</Nav.Link>
               <Nav.Link href="/productlist" >Catalog</Nav.Link>
@@ -56,16 +59,16 @@ const Header = () => {
             />
           </Form>
           {user ? (<>
-          <div style={{color: 'white', margin:'10px', border:'1px solid white', padding:'5px', borderRadius:'5px'}}>{user.email}</div>
-          <Button onClick={handleLogout} variant="primary" >Log Out</Button>
+            <div style={{ color: 'white', margin: '10px', border: '1px solid white', padding: '5px', borderRadius: '5px' }}>{user.email}</div>
+            <Button onClick={handleLogout} variant="primary" >Log Out</Button>
           </>)
-      :
-      (<>
-      <Button onClick={() => history.push('/login')} variant="secondary" style={{ marginLeft: '10px' }}>Log In</Button>
-      <Button onClick={() => history.push('/registration')} variant="primary" >Sign Up</Button>
-        </>)
+            :
+            (<>
+              <Button onClick={() => history.push('/login')} variant="secondary" style={{ marginLeft: '10px' }}>Log In</Button>
+              <Button onClick={() => history.push('/registration')} variant="primary" >Sign Up</Button>
+            </>)
 
-      }
+          }
         </Container>
       </Navbar>
     </>
