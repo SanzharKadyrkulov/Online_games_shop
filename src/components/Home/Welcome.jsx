@@ -8,15 +8,7 @@ import { Grid } from "@material-ui/core";
 
 
 const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1
-  },
-  menuButton: {
-    marginRight: theme.spacing(1)
-  },
-  title: {
-    flexGrow: 1
-  },
+
   mainFeaturesPost: {
     position: 'relative',
     color: theme.palette.common.white,
@@ -26,27 +18,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: 'center',
     marginBottom: theme.spacing(0)
   },
-  overlay: {
-    position: 'absolute',
-    top: 0,
-    bottom: 0,
-    left: 0,
-    right: 0,
-    backgroundOverlay: 'rgba(0,0,0,.3)',
-  },
   mainFeaturesPostContent: {
     position: 'relative',
     padding: theme.spacing(16.6),
-    marginTop: theme.spacing(8)
-  },
-  cardMedia: {
-    paddingTop: '56.25%'
-  },
-  cardContent: {
-    flexGrow: 1
-  },
-  cardGrid: {
-    marginTop: theme.spacing(4)
+    marginTop: theme.spacing(40)
   }
 }))
 
@@ -54,19 +29,13 @@ const Welcome = () => {
   const classes = useStyles()
   return (
     <Paper className={classes.mainFeaturesPost}
-      style={{ backgroundImage: `url(https://cdnb.artstation.com/p/assets/images/images/028/965/037/original/arc-noir-00153112.gif?1596045955)`, backgroundSize: "cover", backgroundPosition: "top" }}>
+      style={{ backgroundImage: `url(https://sm.ign.com/ign_ru/screenshot/default/kopiia-logo_h5c8.jpg)`, backgroundSize: "cover", backgroundPosition: "top" }}>
       <Container fixed>
         <div className={classes.overlay} />
         <Grid container>
           <Grid item md={6}>
             <div className={classes.mainFeaturesPostContent}>
-              <Typography component="h1" variant="h3" color="inherit" gutterBottom>
-                Mobile Legends:
-              </Typography>
-              <Typography component="h3" color="inherit" paragraph>
-                Mobile Legends: Bang Bang — игра в жанре multiplayer online battle arena (MOBA), разработанная для мобильных устройств. ... В игре есть карта с изображением таймингов "Баффов" И полоской здоровья на иконке героев. В каждой команде есть пять игроков, каждый из которых управляет персонажем, известным как «герой»
-              </Typography>
-              <Button href="https://makers.kg/" variant="contained" color="secondary">
+              <Button target="blank" href="https://makers.kg/" variant="contained" color="secondary">
                 Наш тренер
               </Button>
             </div>
