@@ -1,12 +1,12 @@
-import { Button, CardActions, CardContent, Typography } from "@material-ui/core";
+import { Button, Typography } from "@material-ui/core";
 import { Container } from "@material-ui/core";
-import React, { useContext, useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Paper } from "@material-ui/core";
 import { Grid } from "@material-ui/core";
-import { productContext, useProducts } from "../../contexts/ProductContext";
+import { useProducts } from "../../contexts/ProductContext";
 import ProductCard from "./ProductCard";
 import SideBar from "./SideBar";
+import { Pagination } from "@material-ui/lab";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -57,10 +57,27 @@ const useStyles = makeStyles((theme) => ({
 
 const ProductList = () => {
   const classes = useStyles()
-  const { productsData, getProductsData, history } = useProducts()
+  const { productsData, getProductsData, pages, history } = useProducts()
+  const getCurrentPage = () => {
+    const search = new URLSearchParams(window.location.search)
+
+    if(!search.get('_page')){
+        return 1
+    }
+    return search.get('_page')
+}
+const [page, setPage] = useState(getCurrentPage())
   useEffect(() => {
     getProductsData()
   }, [])
+
+  const handlePage = (e, page) => {
+    const search = new URLSearchParams(window.location.search)
+    search.set('_page', page)
+    history.push(`${history.location.pathname}?${search.toString()}`)
+    getProductsData()
+    setPage(page)
+}
 
   return (
     <main style={{ backgroundImage: `url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa9MkfPdzoZhI_XaywgENkathPU73TZM3O5A&usqp=CAU)`, backgroundSize: "cover", backgroundPosition: "top" }}>
@@ -85,6 +102,9 @@ const ProductList = () => {
             <ProductCard key={item.id} item={item} />
           ))}
         </Grid>
+        <div style={{marginLeft: '350px',marginTop:'20px'}}>
+            <Pagination count={pages} color="primary" page={+page} onChange={handlePage} />
+        </div>
       </Container>
     </main>
   );

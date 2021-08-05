@@ -4,7 +4,7 @@ import { useReducer } from 'react';
 import { useContext } from 'react';
 import { createContext } from 'react';
 import { useHistory } from 'react-router-dom';
-import { ACTIONS, JSON_API_PRODUCTS } from '../helpers/consts';
+import { ACTIONS, JSON_API_PRODUCTS, PRODUCTLIMIT } from '../helpers/consts';
 import { calcSubPrice, calcTotalPrice } from '../helpers/functions';
 
 export const productContext = createContext()
@@ -15,13 +15,14 @@ export const useProducts = () => {
 const INIT_STATE = {
     productsData: [],
     productDetails: {},
-    cart:[]
+    cart:[],
+    pages:1
 }
 
 const reducer = (state=INIT_STATE, action) => {
     switch (action.type){
         case ACTIONS.GET_PRODUCTS:
-            return {...state, productsData: action.payload}
+            return {...state, productsData: action.payload.data, pages: Math.ceil(action.payload.headers['x-total-count'] / PRODUCTLIMIT)}
         case ACTIONS.GET_PRODUCT_DETAILS:
             return {...state, productDetails: action.payload}
         case ACTIONS.GET_CART:
@@ -36,11 +37,12 @@ const ProductContextProvider = ({children}) => {
 
     const getProductsData = async () => {
         const search = new URLSearchParams(history.location.search)
+        search.set('_limit', PRODUCTLIMIT)
         history.push(`${history.location.pathname}?${search.toString()}`)
-        const {data} = await axios.get(`${JSON_API_PRODUCTS}/${window.location.search}`)
+        const res = await axios.get(`${JSON_API_PRODUCTS}/${window.location.search}`)
         dispatch({
             type: ACTIONS.GET_PRODUCTS,
-            payload: data
+            payload: res
         })
     }
     const getProductDetails = async (id) => {
@@ -128,6 +130,7 @@ const ProductContextProvider = ({children}) => {
         productsData: state.productsData,
         productDetails: state.productDetails,
         cart: state.cart,
+        pages: state.pages,
         getProductsData,
         getProductDetails,
         addProduct,

@@ -1,16 +1,26 @@
 
 import React from 'react';
+import { useEffect } from 'react';
 import { Container, Nav, Navbar, Form, FormControl, Button } from 'react-bootstrap';
+import { useAuth } from '../../contexts/AuthContext';
 import { useProducts } from '../../contexts/ProductContext';
 import logo from './images.png';
 
 const Header = () => {
   const { history, getProductsData } = useProducts()
+  const {user, logout} = useAuth()
+
   const handleValue = (e) => {
     const search = new URLSearchParams(history.location.search)
     search.set('q', e.target.value)
     history.push(`${history.location.pathname}?${search.toString()}`)
     getProductsData()
+  }
+  useEffect(() => {
+    console.log(user);
+  },[user])
+  const handleLogout = () => {
+    logout()
   }
 
   return (
@@ -45,8 +55,17 @@ const Header = () => {
               onChange={(e) => handleValue(e)}
             />
           </Form>
-          <Button variant="secondary" style={{ marginLeft: '10px' }}>Log In</Button>
-          <Button variant="primary" >Sign Up</Button>
+          {user ? (<>
+          <div style={{color: 'white', margin:'10px', border:'1px solid white', padding:'5px', borderRadius:'5px'}}>{user.email}</div>
+          <Button onClick={handleLogout} variant="primary" >Log Out</Button>
+          </>)
+      :
+      (<>
+      <Button onClick={() => history.push('/login')} variant="secondary" style={{ marginLeft: '10px' }}>Log In</Button>
+      <Button onClick={() => history.push('/registration')} variant="primary" >Sign Up</Button>
+        </>)
+
+      }
         </Container>
       </Navbar>
     </>
