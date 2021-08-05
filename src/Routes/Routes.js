@@ -10,6 +10,8 @@ import ProductDetails from '../components/Home/ProductDetails';
 import ProductList from '../components/Home/ProductList';
 import ProductContextProvider from '../contexts/ProductContext';
 import About from '../components/AboutUs/About';
+import Login from '../components/Auth/Login';
+import Registration from '../components/Auth/Registration';
 
 const Routes = () => {
     return (
@@ -17,6 +19,8 @@ const Routes = () => {
             <ProductContextProvider>
                 <Header />
                 <Switch>
+                    <Route exact path="/login" component = {Login}/>
+                    <Route exact path="/registration" component = {Registration}/>
                     <Route exact path="/about" component={About} />
                     <Route exact path="/" component={Home} />
                     <Route exact path="/productlist" component={ProductList} />
