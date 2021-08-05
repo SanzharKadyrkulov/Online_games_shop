@@ -46,7 +46,7 @@ const Header = () => {
               <Nav.Link href="/">Home</Nav.Link>
               <Nav.Link href="/about">About us</Nav.Link>
               <Nav.Link href="/productlist" >Catalog</Nav.Link>
-              <Nav.Link href="/brend">Brend</Nav.Link>
+              <Nav.Link href="/chat">Chat</Nav.Link>
               <Nav.Link href="/sale">Sale</Nav.Link>
               <Nav.Link href="/cart">Busket</Nav.Link>
             </Nav>

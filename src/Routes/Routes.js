@@ -19,8 +19,8 @@ const Routes = () => {
             <ProductContextProvider>
                 <Header />
                 <Switch>
-                    <Route exact path="/login" component = {Login}/>
-                    <Route exact path="/registration" component = {Registration}/>
+                    <Route exact path="/login" component={Login} />
+                    <Route exact path="/registration" component={Registration} />
                     <Route exact path="/about" component={About} />
                     <Route exact path="/" component={Home} />
                     <Route exact path="/productlist" component={ProductList} />
