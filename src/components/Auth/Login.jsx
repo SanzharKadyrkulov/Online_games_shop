@@ -55,8 +55,7 @@ const Login = () => {
                     </div>
                     <Grid>
                     <TextField onChange={(e) => handleChange(e)} name='email' variant='outlined' required label='Email Address'/>
-                    <TextField onChange={(e) => handleChange(e)} name='password' variant='outlined' required label='Password'/>
-                    <TextField variant='outlined' required label='Password again'/>
+                    <TextField onChange={(e) => handleChange(e)} type='password' name='password' variant='outlined' required label='Password'/>
                     </Grid>
                     <Button variant = 'contained' color='primary' type='submit' disabled={loading}>
                     {loading ? <CircularProgress /> : 'Log in'}

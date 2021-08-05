@@ -8,6 +8,7 @@ import ProductCard from "./ProductCard";
 import SideBar from "./SideBar";
 import { Pagination } from "@material-ui/lab";
 import { useParams } from "react-router-dom";
+import { useAuth } from "../../contexts/AuthContext";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -60,6 +61,17 @@ const ProductList = () => {
   const classes = useStyles()
   const params = useParams()
   const { productsData, getProductsData, pages, history } = useProducts()
+  const {user, clearState} = useAuth()
+//   useEffect(() => {
+//     if(user){
+//       history.push('/')
+//       // alert("Login")
+//     }
+//     return () => {
+//         clearState()
+//     }
+
+// },[user])
   const getCurrentPage = () => {
     const search = new URLSearchParams(window.location.search)
 
@@ -95,7 +107,8 @@ useEffect(() => {
             <Grid className={classes.blabla} container spacing={3} justify="center">
 
               <Grid item>
-                <Button onClick={() => history.push("/addproduct")} variant="outlined" color="secondary">Add Hero</Button>
+                {user && user.email === 'sancho@gmail.com' || user && user.email === 'isakov@gmail.com' ? <Button onClick={() => history.push("/addproduct")} variant="outlined" color="secondary">Add Hero</Button> : <></>}
+                
               </Grid>
               <SideBar />
             </Grid>
