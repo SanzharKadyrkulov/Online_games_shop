@@ -4,8 +4,6 @@ import React, { useContext, useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Paper } from "@material-ui/core";
 import { Grid } from "@material-ui/core";
-import { Card } from "@material-ui/core";
-import { CardMedia } from "@material-ui/core";
 import { productContext, useProducts } from "../../contexts/ProductContext";
 import ProductCard from "./ProductCard";
 import SideBar from "./SideBar";
