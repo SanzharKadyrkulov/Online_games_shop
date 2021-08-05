@@ -1,9 +1,9 @@
 import { Button, Card, CardActions, CardContent, CardMedia, Grid, IconButton, makeStyles, Typography } from '@material-ui/core';
 import React, { useEffect, useState } from 'react';
-import PlayCircleFilledIcon from '@material-ui/icons/PlayCircleFilled'
 import { useProducts } from '../../contexts/ProductContext';
 import DeleteIcon from '@material-ui/icons/Delete';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import { useAuth } from '../../contexts/AuthContext';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -51,6 +51,7 @@ const useStyles = makeStyles((theme) => ({
 const ProductCard = ({item}) => {
     const classes = useStyles()
     const {history, deleteProduct, addProductToCart, cart, getCart} = useProducts()
+    const {user} = useAuth()
     const [newCart, setNewCart] = useState(null)
     useEffect(() => {
       getCart()
@@ -90,7 +91,7 @@ const ProductCard = ({item}) => {
                     <Button onClick={() => history.push(`/details/${item.id}`)} size="small" color="primary">
                       View
                     </Button>
-                    <Button onClick={() => history.push(`/editproduct/${item.id}`)} size="small" color="primary">
+                    {user && user.email === 'sancho@gmail.com' || user && user.email === 'isakov@gmail.com' ? <><Button onClick={() => history.push(`/editproduct/${item.id}`)} size="small" color="primary">
                       Edit
                     </Button>
                     <IconButton
@@ -102,7 +103,8 @@ const ProductCard = ({item}) => {
               color="primary"
             >
               <DeleteIcon />
-            </IconButton>
+            </IconButton></>: <></>}
+                    
             <IconButton 
                 color={checkItemInCart(item.id)}
                 aria-label="add to favorites"

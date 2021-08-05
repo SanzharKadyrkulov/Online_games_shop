@@ -107,6 +107,42 @@
       "price": "15000",
       "animation": "https://plainmemory.com/wp-content/uploads/2020/07/mobile-legends-full-hd-wallpaper-17.jpg",
       "id": 12
+    },
+    {
+      "title": "Vanvan",
+      "describtion": "sdfgfhjk",
+      "image": "https://plainmemory.com/wp-content/uploads/2020/07/mobile-legends-full-hd-wallpaper-23.jpg",
+      "type": "Shooter",
+      "price": "19000",
+      "animation": "https://plainmemory.com/wp-content/uploads/2020/07/mobile-legends-full-hd-wallpaper-23.jpg",
+      "id": 13
+    },
+    {
+      "title": "Saber",
+      "describtion": "sdafghj",
+      "image": "https://wallpaperaccess.com/full/4265535.jpg",
+      "type": "Fighter",
+      "price": "22000",
+      "animation": "https://wallpaperaccess.com/full/4265535.jpg",
+      "id": 14
+    },
+    {
+      "title": "Rubi",
+      "describtion": "asfdghjk",
+      "image": "https://www.xtrafondos.com/wallpapers/ruby-revamp-de-mobile-legends-6433.jpg",
+      "type": "Fighter",
+      "price": "30000",
+      "animation": "https://www.xtrafondos.com/wallpapers/ruby-revamp-de-mobile-legends-6433.jpg",
+      "id": 15
+    },
+    {
+      "title": "Beatrix",
+      "describtion": "sdafghjklk",
+      "image": "https://static.zerochan.net/Beatrix.%28mobile.Legends%3A.Bang.Bang%21%29.full.3261250.jpg",
+      "type": "Shooter",
+      "price": "28000",
+      "animation": "https://static.zerochan.net/Beatrix.%28mobile.Legends%3A.Bang.Bang%21%29.full.3261250.jpg",
+      "id": 16
     }
   ]
 }
