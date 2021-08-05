@@ -10,6 +10,8 @@ import Paper from '@material-ui/core/Paper';
 import { useEffect } from 'react';
 import { useProducts } from '../../contexts/ProductContext';
 import { Typography } from '@material-ui/core';
+import { useAuth } from '../../contexts/AuthContext';
+import { useParams } from 'react-router-dom';
 
 const useStyles = makeStyles({
   table: {
@@ -24,10 +26,17 @@ const useStyles = makeStyles({
 
 export default function Cart() {
   const classes = useStyles();
-    const {cart, getCart, changeProductCount} = useProducts()
+  const params = useParams()
+    const {cart, getCart, changeProductCount, history} = useProducts()
   useEffect(() => {
     getCart()
   },[])
+  useEffect(() => {
+    if(!localStorage.getItem('token')){
+      history.push('/')
+      alert("Login or Signup")
+    }
+},[params])
   
   const handleCountChange = (count, id) => {
     changeProductCount(count,id)
