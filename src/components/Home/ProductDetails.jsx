@@ -12,12 +12,20 @@ import SvgIcon from '@material-ui/core/SvgIcon';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginTop: 100
   },
   paper: {
     padding: theme.spacing(2),
     margin: 'auto',
-    maxWidth: '80%',
+    maxWidth: '100%',
+    maxHeight: '100%',
+    height: "90vh",
+    position: 'relative',
+    color: theme.palette.common.white,
+    marginBottom: theme.spacing(4),
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat',
+    backgroundPosition: 'top',
+    marginBottom: theme.spacing(0)
   },
   //   image: {
   //     width: 200,
@@ -49,31 +57,22 @@ const ProductDetails = () => {
     <>
       {productDetails ?
 
-        <div className={classes.root}>
-          <Paper className={classes.paper}>
-            <Grid container spacing={2}>
-              <Grid item>
-                <ButtonBase className={classes.image}>
-                  <img className={classes.img} alt="complex" src={productDetails.animation} />
-                </ButtonBase>
-              </Grid>
+
+          <Paper style={{ backgroundImage: `url(${productDetails.animation})`}} className={classes.paper}>
+            <Paper style={{backgroundOrigin:"inherit", maxWidth: "300px"}}  spacing={2}>
               <Grid item xs={12} sm container>
                 <Grid item xs container direction="column" spacing={2}>
                   <Grid item xs>
-                    <Typography gutterBottom variant="subtitle1">
+                    <Typography gutterBottom variant="h3">
                       {productDetails.title}
                     </Typography>
-                    <Typography variant="body2" gutterBottom>
+                    <Typography variant="h6" gutterBottom>
                       {productDetails.type}
                     </Typography>
-                    <Typography variant="body2" color="textSecondary">
-                      ID: {productDetails.id}
-                    </Typography>
-
                     <Typography variant="p" >
                       {productDetails.describtion}
                     </Typography>
-
+                    <Typography variant="h4">{productDetails.price}$</Typography>
                   </Grid>
                   <Grid item>
                     <IconButton
@@ -88,13 +87,9 @@ const ProductDetails = () => {
                     </IconButton>
                   </Grid>
                 </Grid>
-                <Grid item>
-                  <Typography variant="subtitle1">{productDetails.price}$</Typography>
-                </Grid>
               </Grid>
-            </Grid>
+            </Paper>
           </Paper>
-        </div>
 
         :
         <CircularProgress />
