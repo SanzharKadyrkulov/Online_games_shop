@@ -25,7 +25,7 @@ const useStyles = makeStyles((theme) => ({
     }
 }))
 
-const Welcome = () => {
+const Advertising = () => {
     const classes = useStyles()
     return (
         <Paper className={classes.mainFeaturesPost}
@@ -43,4 +43,4 @@ const Welcome = () => {
     );
 };
 
-export default Welcome;
+export default Advertising;
