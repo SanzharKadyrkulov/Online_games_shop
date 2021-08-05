@@ -8,6 +8,7 @@ import { useParams } from 'react-router-dom';
 import { CircularProgress, IconButton } from '@material-ui/core';
 import { useProducts } from '../../contexts/ProductContext';
 import SvgIcon from '@material-ui/core/SvgIcon';
+import RestoreIcon from '@material-ui/icons/Restore';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -80,9 +81,9 @@ const ProductDetails = () => {
                       aria-label="account of current user"
                       aria-haspopup="true"
                       color="inherit"
-                      onClick={() => history.push('/')}
+                      onClick={() => history.push('/productlist')}
                     >
-                      <HomeIcon color="primary" />
+                      <RestoreIcon color="primary" />
 
                     </IconButton>
                   </Grid>

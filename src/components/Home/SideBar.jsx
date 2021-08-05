@@ -1,5 +1,4 @@
 import { FormControl, FormLabel, Grid, Paper, FormControlLabel, RadioGroup, Radio, makeStyles, Slider, Button } from '@material-ui/core';
-import { blue } from '@material-ui/core/colors';
 import React from 'react';
 import { useState } from 'react';
 import { useProducts } from '../../contexts/ProductContext';
@@ -31,17 +30,18 @@ const SideBar = () => {
 
 
     const handleChangeType = (e) => {
-        if (e.target.value === 'all') {
-            const search = new URLSearchParams(history.location.search)
-            search.delete('type')
-            history.push(`${history.location.pathname}?${search.toString()}`)
-            getProductsData()
-            setType(e.target.value)
-            return
-        }
+        // if (e.target.value === 'all') {
+        //     const search = new URLSearchParams(history.location.search)
+        //     search.delete('type')
+        //     history.push(`${history.location.pathname}?${search.toString()}`)
+        //     getProductsData()
+        //     setType(e.target.value)
+        //     return
+        // }
 
         const search = new URLSearchParams(history.location.search)
         search.set('type', e.target.value)
+        search.set('_page', 1)
         history.push(`${history.location.pathname}?${search.toString()}`)
         getProductsData()
         setType(e.target.value)
@@ -57,6 +57,7 @@ const SideBar = () => {
     const resetPrice = () => {
         const search = new URLSearchParams(history.location.search)
         search.delete('price_lte')
+        search.delete('type')
         history.push(`${history.location.pathname}?${search.toString()}`)
         getProductsData()
         setPrice(getPrice())
@@ -72,13 +73,13 @@ const SideBar = () => {
                         <FormControlLabel value='Fighter' control={<Radio />} label="Fighter" />
                         <FormControlLabel value='Magician' control={<Radio />} label="Magician" />
                         <FormControlLabel value='Shooter' control={<Radio />} label="Shooter" />
-                        <FormControlLabel value='all' control={<Radio />} label="All" />
+                        {/* <FormControlLabel value='all' control={<Radio />} label="All" /> */}
                     </RadioGroup>
                 </FormControl>
 
                 <Grid>
                     <Slider color="primary" value={price} onChange={handleChangePrice} valueLabelDisplay='auto' aria-labelledby='discrette-slider' min={14000} max={32000} />
-                    <Button onClick={resetPrice} variant='contained' color="white" >Reset price</Button>
+                    <Button onClick={resetPrice} variant='contained' color="white" >Reset</Button>
                 </Grid>
             </Paper>
         </Grid>
