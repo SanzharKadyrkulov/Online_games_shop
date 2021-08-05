@@ -1,51 +1,38 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu'; 
-import { createTheme } from '@material-ui/core/styles';
-import { ThemeProvider } from '@material-ui/styles';
-import grey from '@material-ui/core/colors/grey';
-const theme = createTheme({
-  palette: {
-    primary: grey
-  },
-});
-const useStyles = makeStyles((theme) => ({
-  root: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginRight: theme.spacing(2),
-  },
-  title: {
-    flexGrow: 1,
-  },
-}));
-
+import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import HomeIcon from '@material-ui/icons/Home'
+import InstagramIcon from '@material-ui/icons/Instagram';
+import MusicNoteIcon from '@material-ui/icons/MusicNote';
 const Footer = () => {
-    const classes = useStyles()
-    return (
-      <ThemeProvider theme={theme}>
-      <div className={classes.root}>
-      <AppBar color='primary' position="static">
-        <Toolbar>
-          {/* <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-            <MenuIcon />
-          </IconButton> */}
-          <Typography variant="h6" className={classes.title}>
-            News
-          </Typography>
-          <Button color="inherit">Login</Button>
-        </Toolbar>
-      </AppBar>
-    </div>
-
-      </ThemeProvider>
-    );
+  return (
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Container>
+        <Navbar.Brand href="#home">Bang Bang</Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="me-auto">
+            <Nav.Link href="/"><HomeIcon color="secondary" /></Nav.Link>
+            <Nav.Link target='blank' href="https://ok.ru/profile/548335117050">Sanzharidze</Nav.Link>
+            <Nav.Link target='blank' href="https://www.instagram.com/?hl=ru"> Eslichtoibahnul_1 <InstagramIcon /></Nav.Link>
+            <Nav.Link target='blank' href="https://m.mobilelegends.com/en">More details</Nav.Link>
+            <Nav.Link target='blank' href="https://www.youtube.com/watch?v=WW_bjlhHnQI">Game Music <MusicNoteIcon /></Nav.Link>
+          </Nav>
+          <Nav>
+            <NavDropdown title="Information" id="collasible-nav-dropdown">
+              <NavDropdown.Item target='blank' href="https://ru.wikipedia.org/wiki/Mobile_Legends:_Bang_Bang">
+                Wikipedia</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item target='blank' href="https://m.mobilelegends.com/en/gallery">Gallery Heroes</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item target='blank' href="https://www.bluestacks.com/ru/apps/action/mobile-legends-bang-bang-on-pc.html">Download</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item target='blank' href="https://m.mobilelegends.com/en/rank">Heroes Rank</NavDropdown.Item>
+            </NavDropdown>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+  );
 };
 
 export default Footer;
