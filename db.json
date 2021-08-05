@@ -6,7 +6,7 @@
       "image": "https://static.zerochan.net/Selena.%28Mobile.Legends%3A.Bang.Bang%21%29.full.3261472.jpg",
       "type": "Magician",
       "animation": "https://a-static.besthdwallpaper.com/thunder-flash-selena-mobile-legends-ml-wallpaper-2880x960-67931_104.jpg",
-      "price": "32000",
+      "price": "24000",
       "id": 1
     },
     {
@@ -62,6 +62,51 @@
       "price": "32000",
       "animation": "https://1.bp.blogspot.com/-Gd3OyV7wCYw/X3WVrC5EirI/AAAAAAAACE8/AfTGBpFuxwYZckNwhe2t9gUeHm81LkNcgCLcBGAsYHQ/s0/0ed66c5c16e1bd1342d69e64e8671f5b.png",
       "id": 7
+    },
+    {
+      "title": "Kaya",
+      "describtion": "qwertyui",
+      "image": "https://wallpaperaccess.com/full/3824563.jpg",
+      "type": "Fighter",
+      "price": "32000",
+      "animation": "https://wallpaperaccess.com/full/3824563.jpg",
+      "id": 8
+    },
+    {
+      "title": "Grenger",
+      "describtion": "dgfhjkl;",
+      "image": "https://tricksmobilelegends.com/wp-content/uploads/2021/03/roger-cyborg-werewolf-mobile-legends-scaled.jpg",
+      "type": "Shooter",
+      "price": "12000",
+      "animation": "https://tricksmobilelegends.com/wp-content/uploads/2021/03/roger-cyborg-werewolf-mobile-legends-scaled.jpg",
+      "id": 9
+    },
+    {
+      "title": "Moskov",
+      "describtion": "zdtgjvhnkm",
+      "image": "https://www.teahub.io/photos/full/7-75813_moskov-twilight-dragon-skin-mobile-legends-4k-moskov.jpg",
+      "type": "Shooter",
+      "price": "25000",
+      "animation": "https://www.teahub.io/photos/full/7-75813_moskov-twilight-dragon-skin-mobile-legends-4k-moskov.jpg",
+      "id": 10
+    },
+    {
+      "title": "Gvinevra",
+      "describtion": "sfdghkjl",
+      "image": "https://mocah.org/uploads/posts/306872-Guinevere-Lotus-Skin-Mobile-Legends-4K.jpg",
+      "type": "Magician",
+      "price": "27000",
+      "animation": "https://mocah.org/uploads/posts/306872-Guinevere-Lotus-Skin-Mobile-Legends-4K.jpg",
+      "id": 11
+    },
+    {
+      "title": "Secilion",
+      "describtion": "aszfdhvnkl",
+      "image": "https://plainmemory.com/wp-content/uploads/2020/07/mobile-legends-full-hd-wallpaper-17.jpg",
+      "type": "Magician",
+      "price": "15000",
+      "animation": "https://plainmemory.com/wp-content/uploads/2020/07/mobile-legends-full-hd-wallpaper-17.jpg",
+      "id": 12
     }
   ]
 }

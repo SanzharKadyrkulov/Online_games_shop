@@ -103,7 +103,7 @@ const EditProduct = () => {
                 >
                     <SaveIcon/>
                 </Button>
-                <Button onClick ={() => history.push('/')}>
+                <Button onClick ={() => history.push('/productlist')}>
                     <CancelIcon/>
                 </Button>
                 </form>

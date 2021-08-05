@@ -7,6 +7,7 @@ import { useProducts } from "../../contexts/ProductContext";
 import ProductCard from "./ProductCard";
 import SideBar from "./SideBar";
 import { Pagination } from "@material-ui/lab";
+import { useParams } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -57,6 +58,7 @@ const useStyles = makeStyles((theme) => ({
 
 const ProductList = () => {
   const classes = useStyles()
+  const params = useParams()
   const { productsData, getProductsData, pages, history } = useProducts()
   const getCurrentPage = () => {
     const search = new URLSearchParams(window.location.search)
@@ -78,6 +80,10 @@ const [page, setPage] = useState(getCurrentPage())
     getProductsData()
     setPage(page)
 }
+
+useEffect(() => {
+  setPage(getCurrentPage())
+}, [params])
 
   return (
     <main style={{ backgroundImage: `url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa9MkfPdzoZhI_XaywgENkathPU73TZM3O5A&usqp=CAU)`, backgroundSize: "cover", backgroundPosition: "top" }}>

@@ -24,12 +24,11 @@ const useStyles = makeStyles((theme) => ({
         marginTop: theme.spacing(55)
     }
 }))
-
-const Advertising = () => {
+const Content = () => {
     const classes = useStyles()
     return (
         <Paper className={classes.mainFeaturesPost}
-            style={{ backgroundImage: `url(https://pbs.twimg.com/media/EF7wTldUEAAmiWr.jpg:large)` }}>
+            style={{ backgroundImage: `url(https://i.pinimg.com/originals/98/0b/b7/980bb7f79201db76ec8dcfe8b5694ae6.jpg)` }}>
             <Container fixed>
                 <div className={classes.overlay} />
                 <Grid container>
@@ -43,4 +42,4 @@ const Advertising = () => {
     );
 };
 
-export default Advertising;
+export default Content;

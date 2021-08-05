@@ -13,6 +13,7 @@ const Header = () => {
   const handleValue = (e) => {
     const search = new URLSearchParams(history.location.search)
     search.set('q', e.target.value)
+    search.set('_page', 1)
     history.push(`${history.location.pathname}?${search.toString()}`)
     getProductsData()
   }
