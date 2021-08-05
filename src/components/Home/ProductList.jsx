@@ -62,16 +62,12 @@ const ProductList = () => {
   const params = useParams()
   const { productsData, getProductsData, pages, history } = useProducts()
   const {user, clearState} = useAuth()
-//   useEffect(() => {
-//     if(user){
-//       history.push('/')
-//       // alert("Login")
-//     }
-//     return () => {
-//         clearState()
-//     }
-
-// },[user])
+  useEffect(() => {
+    if(!localStorage.getItem('token')){
+      history.push('/')
+      alert("Login or Signup")
+    }
+},[params])
   const getCurrentPage = () => {
     const search = new URLSearchParams(window.location.search)
 
@@ -121,7 +117,7 @@ useEffect(() => {
             <ProductCard key={item.id} item={item} />
           ))}
         </Grid>
-        <div style={{ marginLeft: '350px', marginTop: '20px' }}>
+        <div style={{ marginLeft: '300px', marginTop: '20px' }}>
           <Pagination count={pages} color="primary" page={+page} onChange={handlePage} />
         </div>
       </Container>
