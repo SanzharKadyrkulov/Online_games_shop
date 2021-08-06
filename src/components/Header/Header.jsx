@@ -49,6 +49,7 @@ const Header = () => {
               <Nav.Link href="/chat">Chat</Nav.Link>
               <Nav.Link href="/sale">Sale</Nav.Link>
               <Nav.Link href="/cart">Busket</Nav.Link>
+              <Nav.Link href="/fav">Favorite</Nav.Link>
             </Nav>
           </Navbar.Collapse>
           <Form inline>

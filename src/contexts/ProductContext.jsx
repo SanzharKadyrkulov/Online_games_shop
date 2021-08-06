@@ -15,23 +15,26 @@ export const useProducts = () => {
 const INIT_STATE = {
     productsData: [],
     productDetails: {},
-    cart:[],
-    pages:1
+    cart: [],
+    pages: 1,
+    fav: []
 }
 
-const reducer = (state=INIT_STATE, action) => {
-    switch (action.type){
+const reducer = (state = INIT_STATE, action) => {
+    switch (action.type) {
         case ACTIONS.GET_PRODUCTS:
-            return {...state, productsData: action.payload.data, pages: Math.ceil(action.payload.headers['x-total-count'] / PRODUCTLIMIT)}
+            return { ...state, productsData: action.payload.data, pages: Math.ceil(action.payload.headers['x-total-count'] / PRODUCTLIMIT) }
         case ACTIONS.GET_PRODUCT_DETAILS:
-            return {...state, productDetails: action.payload}
+            return { ...state, productDetails: action.payload }
         case ACTIONS.GET_CART:
-            return {...state, cart: action.payload}
+            return { ...state, cart: action.payload }
+        case ACTIONS.GET_FAV:
+            return { ...state, fav: action.payload }
         default: return state
     }
 }
 
-const ProductContextProvider = ({children}) => {
+const ProductContextProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, INIT_STATE)
     const history = useHistory()
 
@@ -46,7 +49,7 @@ const ProductContextProvider = ({children}) => {
         })
     }
     const getProductDetails = async (id) => {
-        const {data} = await axios.get(`${JSON_API_PRODUCTS}/${id}`)
+        const { data } = await axios.get(`${JSON_API_PRODUCTS}/${id}`)
         dispatch({
             type: ACTIONS.GET_PRODUCT_DETAILS,
             payload: data
@@ -66,7 +69,7 @@ const ProductContextProvider = ({children}) => {
     }
     const getCart = () => {
         let cart = JSON.parse(localStorage.getItem('cart'))
-        if (!cart){
+        if (!cart) {
             localStorage.setItem('cart', JSON.stringify({
                 products: [],
                 totalPrice: 0
@@ -81,9 +84,26 @@ const ProductContextProvider = ({children}) => {
             payload: cart
         })
     }
+    const getFav = () => {
+        let fav = JSON.parse(localStorage.getItem('fav'))
+        if (!fav) {
+            localStorage.setItem('fav', JSON.stringify({
+                products: [],
+                totalPrice: 0
+            }))
+            fav = {
+                product: [],
+                totalPrice: 0
+            }
+        }
+        dispatch({
+            type: ACTIONS.GET_FAV,
+            payload: fav
+        })
+    }
     const addProductToCart = (product) => {
         let cart = JSON.parse(localStorage.getItem("cart"))
-        if (!cart){
+        if (!cart) {
             cart = {
                 products: [],
                 totalPrice: 0
@@ -91,13 +111,13 @@ const ProductContextProvider = ({children}) => {
         }
         let newProduct = {
             item: product,
-            count:1,
+            count: 1,
             subPrice: +product.price
         }
         let productToFind = cart.products.filter(item => item.item.id === product.id)
-        if(productToFind.length === 0){
+        if (productToFind.length === 0) {
             cart.products.push(newProduct)
-        }else{
+        } else {
             cart.products = cart.products.filter(item => item.item.id !== product.id)
         }
         cart.totalPrice = calcTotalPrice(cart.products)
@@ -108,7 +128,33 @@ const ProductContextProvider = ({children}) => {
             payload: cart
         })
     }
-    const changeProductCount = (count,id) => {
+    const favProductToCart = (product) => {
+        let fav = JSON.parse(localStorage.getItem("fav"))
+        if (!fav) {
+            fav = {
+                products: [],
+                totalPrice: 0
+            }
+        }
+        let newProduct = {
+            item: product,
+            count: 1,
+        }
+        let productToFind = fav.products.filter(item => item.item.id === product.id)
+        if (productToFind.length === 0) {
+            fav.products.push(newProduct)
+        } else {
+            fav.products = fav.products.filter(item => item.item.id !== product.id)
+        }
+        fav.totalPrice = calcTotalPrice(fav.products)
+        localStorage.setItem('fav', JSON.stringify(fav))
+
+        dispatch({
+            type: ACTIONS.GET_FAV,
+            payload: fav
+        })
+    }
+    const changeProductCount = (count, id) => {
         let cart = JSON.parse(localStorage.getItem('cart'))
         cart.products = cart.products.map(product => {
             if (product.item.id === id) {
@@ -130,6 +176,7 @@ const ProductContextProvider = ({children}) => {
         productsData: state.productsData,
         productDetails: state.productDetails,
         cart: state.cart,
+        fav: state.fav,
         pages: state.pages,
         getProductsData,
         getProductDetails,
@@ -137,8 +184,10 @@ const ProductContextProvider = ({children}) => {
         editProduct,
         deleteProduct,
         getCart,
+        getFav,
         addProductToCart,
-        changeProductCount
+        changeProductCount,
+        favProductToCart
     }
     return (
         <productContext.Provider value={values}>
