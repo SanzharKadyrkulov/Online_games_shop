@@ -60,7 +60,7 @@ const ProductDetails = () => {
 
 
           <Paper style={{ backgroundImage: `url(${productDetails.animation})`}} className={classes.paper}>
-            <Paper style={{backgroundOrigin:"inherit", maxWidth: "300px"}}  spacing={2}>
+            <Paper style={{backgroundColor: '#00000000', color:'white', maxWidth: "300px"}}  spacing={2}>
               <Grid item xs={12} sm container>
                 <Grid item xs container direction="column" spacing={2}>
                   <Grid item xs>

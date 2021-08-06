@@ -94,7 +94,7 @@ useEffect(() => {
 }, [params])
 
   return (
-    <main style={{ backgroundImage: `url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa9MkfPdzoZhI_XaywgENkathPU73TZM3O5A&usqp=CAU)`, backgroundSize: "cover", backgroundPosition: "top" }}>
+    <main style={{ backgroundImage: `url(https://images.alphacoders.com/529/529250.jpg)`, backgroundSize: "cover", backgroundPosition: "top" }}>
       <div className={classes.mainContent}>
         <Container maxWidth='sm'>
           <Typography variant='h2' align='center' color='textPrimary' gutterBottom>Our Heroes!</Typography>
