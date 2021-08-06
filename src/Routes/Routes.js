@@ -13,25 +13,26 @@ import ProductContextProvider from '../contexts/ProductContext';
 import About from '../components/AboutUs/About';
 import Login from '../components/Auth/Login';
 import Registration from '../components/Auth/Registration';
+import ProtectedRoute from './ProtectedRoute';
 
 const Routes = () => {
     return (
         <BrowserRouter>
             <ProductContextProvider>
-                <Header />
+                {/* <Header /> */}
                 <Switch>
                     <Route exact path="/login" component={Login} />
                     <Route exact path="/registration" component={Registration} />
                     <Route exact path="/about" component={About} />
                     <Route exact path="/" component={Home} />
-                    <Route exact path="/productlist" component={ProductList} />
+                    <ProtectedRoute exact path="/productlist" component={ProductList} />
                     <Route exact path='/addproduct' component={AddProduct} />
-                    <Route exact path="/cart" component={Cart} />
-                    <Route exact path='/fav' component={Fav} />
+                    <ProtectedRoute exact path="/cart" component={Cart} />
+                    <ProtectedRoute exact path='/fav' component={Fav} />
                     <Route exact path='/editproduct/:id' component={EditProduct} />
                     <Route exact path='/details/:id' component={ProductDetails} />
                 </Switch>
-                <Footer />
+                {/* <Footer /> */}
             </ProductContextProvider>
 
         </BrowserRouter>

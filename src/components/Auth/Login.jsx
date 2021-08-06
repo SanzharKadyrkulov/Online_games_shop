@@ -2,7 +2,7 @@ import { Button, Container, Grid, TextField, Typography } from '@material-ui/cor
 import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import MuiAlert from '@material-ui/lab/Alert';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -16,6 +16,8 @@ const Login = () => {
     const [newUser, setNewUser] = useState({})
     const {loginUser, user, clearState, errorMessage, loading} = useAuth()
     const history = useHistory()
+    const location = useLocation()
+    const {from} = location.state || {from :{pathname: '/'}}
     const handleChange = (e) => {
         let newObj = {
             ...newUser
@@ -43,6 +45,18 @@ const Login = () => {
         }
 
     },[user])
+
+    useEffect(() => {
+        if(user){
+            history.replace(from)
+        }
+
+        return () => {
+            clearState()
+        }
+
+    },[user])
+
     return (
         <Container component='main' maxWidth='xs'>
             <form onSubmit={signin} action="">

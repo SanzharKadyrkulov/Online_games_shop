@@ -171,6 +171,23 @@ const ProductContextProvider = ({ children }) => {
         })
 
     }
+    const changeFavCount = (count, id) => {
+        let fav = JSON.parse(localStorage.getItem('fav'))
+        fav.products = fav.products.map(product => {
+            if (product.item.id === id) {
+                product.count = count;
+                product.subPrice = calcSubPrice(product)
+            }
+            return product
+        })
+        fav.totalPrice = calcTotalPrice(fav.products)
+        localStorage.setItem('fav', JSON.stringify(fav))
+        dispatch({
+            type: ACTIONS.GET_FAV,
+            payload: fav
+        })
+
+    }
     const values = {
         history,
         productsData: state.productsData,
@@ -187,7 +204,8 @@ const ProductContextProvider = ({ children }) => {
         getFav,
         addProductToCart,
         changeProductCount,
-        favProductToCart
+        favProductToCart,
+        changeFavCount
     }
     return (
         <productContext.Provider value={values}>

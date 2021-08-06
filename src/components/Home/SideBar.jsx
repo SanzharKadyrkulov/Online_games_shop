@@ -71,8 +71,8 @@ const SideBar = () => {
                     <FormLabel component='legend'>Type</FormLabel>
                     <RadioGroup value={type} onChange={handleChangeType}>
                         <FormControlLabel value='Fighter' control={<Radio />} label="Fighter" />
-                        <FormControlLabel value='Magician' control={<Radio />} label="Magician" />
-                        <FormControlLabel value='Shooter' control={<Radio />} label="Shooter" />
+                        <FormControlLabel value='Mage' control={<Radio />} label="Mage" />
+                        <FormControlLabel value='Marksman' control={<Radio />} label="Marksman" />
                         {/* <FormControlLabel value='all' control={<Radio />} label="All" /> */}
                     </RadioGroup>
                 </FormControl>

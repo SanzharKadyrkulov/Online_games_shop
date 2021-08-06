@@ -9,6 +9,7 @@ import SideBar from "./SideBar";
 import { Pagination } from "@material-ui/lab";
 import { useParams } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
+import MainLayout from "../../layouts/MainLayouts";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -62,12 +63,12 @@ const ProductList = () => {
   const params = useParams()
   const { productsData, getProductsData, pages, history } = useProducts()
   const {user, clearState} = useAuth()
-  useEffect(() => {
-    if(!localStorage.getItem('token')){
-      history.push('/')
-      alert("Login or Signup")
-    }
-},[params])
+//   useEffect(() => {
+//     if(!localStorage.getItem('token')){
+//       history.push('/')
+//       alert("Login or Signup")
+//     }
+// },[params])
   const getCurrentPage = () => {
     const search = new URLSearchParams(window.location.search)
 
@@ -94,6 +95,8 @@ useEffect(() => {
 }, [params])
 
   return (
+    <MainLayout>
+
     <main style={{ backgroundImage: `url(https://images.alphacoders.com/529/529250.jpg)`, backgroundSize: "cover", backgroundPosition: "top" }}>
       <div className={classes.mainContent}>
         <Container maxWidth='sm'>
@@ -117,11 +120,12 @@ useEffect(() => {
             <ProductCard key={item.id} item={item} />
           ))}
         </Grid>
-        <div style={{ marginLeft: '300px', marginTop: '20px' }}>
-          <Pagination count={pages} color="primary" page={+page} onChange={handlePage} />
+        <div style={{ marginLeft: '285px', marginTop: '20px' }}>
+          <Pagination style={{textColor: "white"}} count={pages} color="primary" page={+page} onChange={handlePage} />
         </div>
       </Container>
     </main>
+    </MainLayout>
   );
 };
 
