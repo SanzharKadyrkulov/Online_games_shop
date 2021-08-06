@@ -2,36 +2,36 @@
   "Products": [
     {
       "title": "Selena",
-      "describtion": "Семь пуль не важно, самое главное в упоре убивает сразу.",
+      "describtion": "South of the Moniyan Empire lies a bottomless abyss, engraved into this barren landscape as if an ancient demon used the sharpest of blades to carve a disfiguring scar into the Land of Dawn. People call this the Shadow Abyss.  Sealed away at the bottom of this legendary abyss, lies the most terrible demon in the Land of Dawn - the Abyss Dominator. But as the seal slowly fades, the will of the abyss gradually grows stronger.",
       "image": "https://static.zerochan.net/Selena.%28Mobile.Legends%3A.Bang.Bang%21%29.full.3261472.jpg",
-      "type": "Magician",
+      "type": "Mage",
       "animation": "https://a-static.besthdwallpaper.com/thunder-flash-selena-mobile-legends-ml-wallpaper-2880x960-67931_104.jpg",
       "price": "24000",
       "id": 1
     },
     {
       "title": "Esmeralda",
-      "describtion": "Пушка заряженная так стреляет, с одной пули вырубает.",
+      "describtion": "The astrologers, who have constantly been observing astrospace, possess the occult abilities to explain and predict everything in the world, including both about their processes and results. To become an astrologer, candidates should pass rigorous assessments, which will test both their willpower and astrological abilities. Going down the generations, the elders finally select Esmeralda, a young girl living in the Western Desert, to be a new successor in the Land of Dawn.",
       "image": "https://cdn.discordapp.com/attachments/769300413375578183/871433587021455480/KOMTfoXCM5A.jpg",
-      "type": "Magician",
+      "type": "Mage",
       "animation": "https://cdn.discordapp.com/attachments/769300413375578183/871433587021455480/KOMTfoXCM5A.jpg",
       "price": "32000",
       "id": 2
     },
     {
       "title": "Bruno",
-      "describtion": "Пушка заряженная так стреляет, что не успеваешь убежать",
+      "describtion": "Growing up in the slums, Bruno was always thinner and much more frail than his peers. However, these circumstances never stopped him from having a courageous heart, filled with freedom. Bruno's kindness and integrity were his greatest traits. He was also known to have much improved leg strength and efficient kicking techniques, which had been well exercised, through him playing local soccer. Thus, he remained proud of his performances. However, Bruno used these techniques to not only defeat lots and lots of malicious soccer opponents, but also help his villagers, as well.",
       "image": "https://plainmemory.com/wp-content/uploads/2020/07/mobile-legends-full-hd-wallpaper-34.jpg",
-      "type": "Shooter",
+      "type": "Marksman",
       "animation": "https://plainmemory.com/wp-content/uploads/2020/07/mobile-legends-full-hd-wallpaper-34.jpg",
       "price": "24000",
       "id": 3
     },
     {
       "title": "Lesley",
-      "describtion": "Пушка заряженная так стреляет, что не успеваешь убежать",
+      "describtion": "Lesley grew up in the Vance household, where her father presided over the noble family's security. During an unexpected attack by a rival family, Lesley's father was killed. As the assailants approached the Vance household, Lesley took up her father's black long rifle and fulfilled her late father's mission. Tears rolled down Lesley's cheeks as she fired shot after shot, surprisingly, each one taking down an assassin. The final tear came as the final shot took down the last of the rival family's men.",
       "image": "https://www.pixel4k.com/wp-content/uploads/2020/02/mobile-legends_1581272006.jpg",
-      "type": "Shooter",
+      "type": "Marksman",
       "price": "32000",
       "animation": "https://www.pixel4k.com/wp-content/uploads/2020/02/mobile-legends_1581272006.jpg",
       "id": 4
@@ -49,14 +49,14 @@
       "title": "Hayabusa",
       "describtion": "Пушка заряженная так стреляет, с одной пули вырубает.",
       "image": "https://1.bp.blogspot.com/-JWRD7-TYlP4/X2Yc336eIfI/AAAAAAAAB2A/quKcdCC_ftAuy76TGfGjatabVnnel3_AQCLcBGAsYHQ/s0/69c4c665b8cfe31e5dcdaf1fbfc55717.png",
-      "type": "Magician",
+      "type": "Mage",
       "price": "14000",
       "animation": "https://1.bp.blogspot.com/-JWRD7-TYlP4/X2Yc336eIfI/AAAAAAAAB2A/quKcdCC_ftAuy76TGfGjatabVnnel3_AQCLcBGAsYHQ/s0/69c4c665b8cfe31e5dcdaf1fbfc55717.png",
       "id": 6
     },
     {
       "title": "Tigreal",
-      "describtion": "Семь пуль не важно, самое главное в упоре убивает сразу.",
+      "describtion": "Tigreal was born into the noble Witting family. Since the establishment of the Moniyan Empire, the Witting family has continuously provided military talents for the empire, and has guarded Moniyan’s imperial power and national security for generations. Tigreal’s generation is no exception. His father Gareth is the empire’s Minister of Defense and the emperor’s right-hand man, while his uncle Eckert is in charge of the border guards stationed at the most dangerous area between the southern part of the empire and the land of despair.",
       "image": "https://1.bp.blogspot.com/-Gd3OyV7wCYw/X3WVrC5EirI/AAAAAAAACE8/AfTGBpFuxwYZckNwhe2t9gUeHm81LkNcgCLcBGAsYHQ/s0/0ed66c5c16e1bd1342d69e64e8671f5b.png",
       "type": "Fighter",
       "price": "32000",
@@ -74,18 +74,18 @@
     },
     {
       "title": "Grenger",
-      "describtion": "dgfhjkl;",
+      "describtion": "qwert",
       "image": "https://tricksmobilelegends.com/wp-content/uploads/2021/03/roger-cyborg-werewolf-mobile-legends-scaled.jpg",
-      "type": "Shooter",
+      "type": "Marksman",
       "price": "12000",
       "animation": "https://tricksmobilelegends.com/wp-content/uploads/2021/03/roger-cyborg-werewolf-mobile-legends-scaled.jpg",
       "id": 9
     },
     {
       "title": "Moskov",
-      "describtion": "zdtgjvhnkm",
+      "describtion": "qwerty",
       "image": "https://www.teahub.io/photos/full/7-75813_moskov-twilight-dragon-skin-mobile-legends-4k-moskov.jpg",
-      "type": "Shooter",
+      "type": "Marksman",
       "price": "25000",
       "animation": "https://www.teahub.io/photos/full/7-75813_moskov-twilight-dragon-skin-mobile-legends-4k-moskov.jpg",
       "id": 10
@@ -94,7 +94,7 @@
       "title": "Gvinevra",
       "describtion": "sfdghkjl",
       "image": "https://mocah.org/uploads/posts/306872-Guinevere-Lotus-Skin-Mobile-Legends-4K.jpg",
-      "type": "Magician",
+      "type": "Mage",
       "price": "27000",
       "animation": "https://mocah.org/uploads/posts/306872-Guinevere-Lotus-Skin-Mobile-Legends-4K.jpg",
       "id": 11
@@ -103,7 +103,7 @@
       "title": "Secilion",
       "describtion": "aszfdhvnkl",
       "image": "https://plainmemory.com/wp-content/uploads/2020/07/mobile-legends-full-hd-wallpaper-17.jpg",
-      "type": "Magician",
+      "type": "Mage",
       "price": "15000",
       "animation": "https://plainmemory.com/wp-content/uploads/2020/07/mobile-legends-full-hd-wallpaper-17.jpg",
       "id": 12
@@ -112,7 +112,7 @@
       "title": "Vanvan",
       "describtion": "sdfgfhjk",
       "image": "https://plainmemory.com/wp-content/uploads/2020/07/mobile-legends-full-hd-wallpaper-23.jpg",
-      "type": "Shooter",
+      "type": "Marksman",
       "price": "19000",
       "animation": "https://plainmemory.com/wp-content/uploads/2020/07/mobile-legends-full-hd-wallpaper-23.jpg",
       "id": 13
@@ -139,7 +139,7 @@
       "title": "Beatrix",
       "describtion": "sdafghjklk",
       "image": "https://static.zerochan.net/Beatrix.%28mobile.Legends%3A.Bang.Bang%21%29.full.3261250.jpg",
-      "type": "Shooter",
+      "type": "Marksman",
       "price": "28000",
       "animation": "https://static.zerochan.net/Beatrix.%28mobile.Legends%3A.Bang.Bang%21%29.full.3261250.jpg",
       "id": 16
@@ -184,7 +184,7 @@
       "title": "Change",
       "describtion": "zshdxfjcbknl;",
       "image": "https://1.bp.blogspot.com/-bNM6cGzHgTg/X9LQvyZcZ7I/AAAAAAAADb0/-TzHrZ6nM340L8iYotesUnUt9stCDoMWQCLcBGAsYHQ/s0/91c3ca50c0827cc34d918c9c82d949c9.png",
-      "type": "Magician",
+      "type": "Mage",
       "price": "28000",
       "animation": "https://1.bp.blogspot.com/-bNM6cGzHgTg/X9LQvyZcZ7I/AAAAAAAADb0/-TzHrZ6nM340L8iYotesUnUt9stCDoMWQCLcBGAsYHQ/s0/91c3ca50c0827cc34d918c9c82d949c9.png",
       "id": 21

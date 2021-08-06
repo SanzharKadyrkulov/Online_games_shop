@@ -1,9 +1,12 @@
 import React from 'react';
 import { Card } from 'react-bootstrap';
+import MainLayout from '../../layouts/MainLayouts';
 import foto from './Foto.jpg'
 import foot from './fotod.jpg'
 const About = () => {
     return (
+        <MainLayout>
+
         <div
             style={{
                 backgroundImage: `url(https://vse-frazi.ru/wp-content/uploads/2018/02/2018-02-05_112416.jpg)`, backgroundSize: "40px", display: 'flex', justifyContent: 'center', justifyContent: 'space-between'
@@ -30,6 +33,7 @@ const About = () => {
                 </Card.Body>
             </Card>
         </div>
+        </MainLayout>
 
     );
 };

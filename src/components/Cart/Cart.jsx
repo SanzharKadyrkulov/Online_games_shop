@@ -12,6 +12,9 @@ import { useProducts } from '../../contexts/ProductContext';
 import { Typography } from '@material-ui/core';
 import { useAuth } from '../../contexts/AuthContext';
 import { useParams } from 'react-router-dom';
+import MainLayout from "../../layouts/MainLayouts";
+import HeaderLayout from "../../layouts/HeaderLayout";
+
 
 const useStyles = makeStyles({
   table: {
@@ -31,18 +34,20 @@ export default function Cart() {
   useEffect(() => {
     getCart()
   },[])
-  useEffect(() => {
-    if(!localStorage.getItem('token')){
-      history.push('/')
-      alert("Login or Signup")
-    }
-},[params])
+//   useEffect(() => {
+//     if(!localStorage.getItem('token')){
+//       history.push('/')
+//       alert("Login or Signup")
+//     }
+// },[params])
   
   const handleCountChange = (count, id) => {
     changeProductCount(count,id)
   }
 
   return (
+    <HeaderLayout>
+
     <TableContainer component={Paper}>
       <Table className={classes.table} aria-label="caption table">
         
@@ -92,5 +97,6 @@ export default function Cart() {
         </TableBody>
       </Table>
     </TableContainer>
+    </HeaderLayout>
   );
 }

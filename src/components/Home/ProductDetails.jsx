@@ -9,6 +9,7 @@ import { CircularProgress, IconButton } from '@material-ui/core';
 import { useProducts } from '../../contexts/ProductContext';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import RestoreIcon from '@material-ui/icons/Restore';
+import MainLayout from '../../layouts/MainLayouts';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -55,6 +56,8 @@ const ProductDetails = () => {
   const classes = useStyles();
 
   return (
+    <MainLayout>
+      
     <>
       {productDetails ?
 
@@ -83,7 +86,7 @@ const ProductDetails = () => {
                       color="inherit"
                       onClick={() => history.push('/productlist')}
                     >
-                      <RestoreIcon color="primary" />
+                      <RestoreIcon style={{border:'2px solid rgba(52, 52, 52, 0.5)', borderRadius:"50%"}} color="white" />
 
                     </IconButton>
                   </Grid>
@@ -96,6 +99,7 @@ const ProductDetails = () => {
         <CircularProgress />
       }
     </>
+    </MainLayout>
   )
 }
 

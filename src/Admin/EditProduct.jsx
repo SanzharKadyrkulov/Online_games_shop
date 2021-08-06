@@ -6,6 +6,7 @@ import CancelIcon from '@material-ui/icons/Cancel';
 import { useParams } from 'react-router-dom';
 import { useProducts } from '../contexts/ProductContext';
 import { handleInp } from '../helpers/functions';
+import MainLayout from '../layouts/MainLayouts';
 
 const useStyles = makeStyles(theme => ({
     paper: {
@@ -34,7 +35,7 @@ const useStyles = makeStyles(theme => ({
 
 const EditProduct = () => {
     const classes = useStyles()
-    const {getProductDetails, productDetails,editProduct, history} = useProducts()
+    const {getProductDetails,getProductsData, productDetails,editProduct, history} = useProducts()
     const {id} = useParams()
     useEffect(() => {
         getProductDetails(id)
@@ -50,7 +51,11 @@ const EditProduct = () => {
         setProduct(productDetails)
     }, [productDetails])
     
+
+
     return (
+        <MainLayout>
+
         <>
         {productDetails ?
         <Paper className = {classes.paper} elevation={3}>
@@ -112,6 +117,7 @@ const EditProduct = () => {
         : "loading"
         }   
         </>
+        </MainLayout>
     );
 };
 
