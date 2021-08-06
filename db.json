@@ -30,10 +30,10 @@
     {
       "title": "Lesley",
       "describtion": "Пушка заряженная так стреляет, что не успеваешь убежать",
-      "image": "https://plainmemory.com/wp-content/uploads/2020/07/mobile-legends-full-hd-wallpaper-36.jpg",
+      "image": "https://www.pixel4k.com/wp-content/uploads/2020/02/mobile-legends_1581272006.jpg",
       "type": "Shooter",
       "price": "32000",
-      "animation": "https://plainmemory.com/wp-content/uploads/2020/07/mobile-legends-full-hd-wallpaper-36.jpg",
+      "animation": "https://www.pixel4k.com/wp-content/uploads/2020/02/mobile-legends_1581272006.jpg",
       "id": 4
     },
     {
@@ -143,6 +143,51 @@
       "price": "28000",
       "animation": "https://static.zerochan.net/Beatrix.%28mobile.Legends%3A.Bang.Bang%21%29.full.3261250.jpg",
       "id": 16
+    },
+    {
+      "title": "Khalid",
+      "describtion": "asgdfhgjhjk",
+      "image": "https://1.bp.blogspot.com/-OFQ5VNQ-36k/X4md_iR3j4I/AAAAAAAADXs/JVPxCtX1h90Gkv2lAn-vQrdKhzh6A4ndACLcBGAsYHQ/s1920/Khaleed-Desert-Scimitar-Heroes-Fighter-of-Skins-ML-HD-Wallpapers.jpg",
+      "type": "Fighter",
+      "price": "27000",
+      "animation": "https://1.bp.blogspot.com/-OFQ5VNQ-36k/X4md_iR3j4I/AAAAAAAADXs/JVPxCtX1h90Gkv2lAn-vQrdKhzh6A4ndACLcBGAsYHQ/s1920/Khaleed-Desert-Scimitar-Heroes-Fighter-of-Skins-ML-HD-Wallpapers.jpg",
+      "id": 17
+    },
+    {
+      "title": "Badang",
+      "describtion": "fdzghhijo;hf",
+      "image": "https://a-static.besthdwallpaper.com/fist-of-zen-badang-mobile-legends-ml-oboi-3840x2160-67987_54.jpg",
+      "type": "Fighter",
+      "price": "24000",
+      "animation": "https://a-static.besthdwallpaper.com/fist-of-zen-badang-mobile-legends-ml-oboi-3840x2160-67987_54.jpg",
+      "id": 18
+    },
+    {
+      "title": "Guission",
+      "describtion": "cghkvjblknlm",
+      "image": "https://alivedesktop.com/wp-content/uploads/2020/06/Guision-wallpaper-landscape-for-PC-or-table3.png",
+      "type": "Fighter",
+      "price": "14000",
+      "animation": "https://alivedesktop.com/wp-content/uploads/2020/06/Guision-wallpaper-landscape-for-PC-or-table3.png",
+      "id": 19
+    },
+    {
+      "title": "Lancelot",
+      "describtion": "gvjhkijoiuhj",
+      "image": "https://tricksmobilelegends.com/wp-content/uploads/2021/01/lancelot-mobile-legends-skin-uhdpaper.com-4K-8.1815-scaled-2560x1280.jpg",
+      "type": "Fighter",
+      "price": "29000",
+      "animation": "https://tricksmobilelegends.com/wp-content/uploads/2021/01/lancelot-mobile-legends-skin-uhdpaper.com-4K-8.1815-scaled-2560x1280.jpg",
+      "id": 20
+    },
+    {
+      "title": "Change",
+      "describtion": "zshdxfjcbknl;",
+      "image": "https://1.bp.blogspot.com/-bNM6cGzHgTg/X9LQvyZcZ7I/AAAAAAAADb0/-TzHrZ6nM340L8iYotesUnUt9stCDoMWQCLcBGAsYHQ/s0/91c3ca50c0827cc34d918c9c82d949c9.png",
+      "type": "Magician",
+      "price": "28000",
+      "animation": "https://1.bp.blogspot.com/-bNM6cGzHgTg/X9LQvyZcZ7I/AAAAAAAADb0/-TzHrZ6nM340L8iYotesUnUt9stCDoMWQCLcBGAsYHQ/s0/91c3ca50c0827cc34d918c9c82d949c9.png",
+      "id": 21
     }
   ]
 }
