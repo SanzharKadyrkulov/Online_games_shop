@@ -4,7 +4,6 @@ import { useEffect } from 'react';
 import { Container, Nav, Navbar, Form, FormControl, Button } from 'react-bootstrap';
 import { useAuth } from '../../contexts/AuthContext';
 import { useProducts } from '../../contexts/ProductContext';
-import BoopButton from '../../Song/Song';
 import Song from '../../Song/Song';
 import logo from './images.png';
 
@@ -28,7 +27,7 @@ const Header = () => {
 
   return (
     <>
-      <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
+      <Navbar collapseOnSelect expand="md" style={{backgroundColor: '#264659'}} variant="dark">
         <Container>
           <Navbar.Brand href="/">
             <img

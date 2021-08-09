@@ -120,8 +120,8 @@ useEffect(() => {
             <ProductCard key={item.id} item={item} />
           ))}
         </Grid>
-        <div style={{ marginLeft: '285px', marginTop: '20px' }}>
-          <Pagination style={{textColor: "white"}} count={pages} color="primary" page={+page} onChange={handlePage} />
+        <div style={{ marginLeft: '280px' }}>
+          <Pagination style={{textColor: "white", margin: '10px auto !important'}} count={pages} color="primary" page={+page} onChange={handlePage} />
         </div>
       </Container>
     </main>

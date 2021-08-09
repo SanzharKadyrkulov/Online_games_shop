@@ -1,4 +1,4 @@
-import { Button, Container, Grid, TextField, Typography } from '@material-ui/core';
+import { Button, Container, Grid, TextField, Typography, makeStyles, Paper } from '@material-ui/core';
 import React from 'react';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom';
@@ -11,8 +11,42 @@ function Alert(props) {
     return <MuiAlert elevation={6} variant="filled" {...props} />;
   }
 
+
+  const useStyles = makeStyles(theme => ({
+    paper: {
+        padding: theme.spacing(2),
+        color: theme.palette.text.secondary,
+        margin: '0px auto',
+        maxWidth: 400
+    },
+    title: {
+        textAlign: "center",
+        color: "#8bc34a"
+    },
+    input: {
+        color: "#e0f5cf",
+        borderRightColor: '#FFF'
+    },
+    input__label: {
+        color: "#95cca5",
+        borderRightColor: '#FFF'
+    },
+    textfield: {
+        marginTop: 10,
+        color: 'green !important',
+        border: '1px solid grey',
+        borderRadius: theme.shape.borderRadius
+        // color:'secondary'
+    },
+    form: {
+        display: 'flex',
+        flexDirection: 'column',
+    },
+}))
+
 const Registration = () => {
     const [newUser, setNewUser] = useState({})
+    const classes = useStyles()
     const {registerUser, user, succes, loading, errorMessage, clearState} = useAuth()
     const history = useHistory()
     const handleChange = (e) => {
@@ -42,27 +76,59 @@ const Registration = () => {
     }, [succes])
 
     return (
-        <Container component='main' maxWidth='xs'>
-            <form onSubmit={signup} action="">
+        <div style={{padding: '60px', height:'100vh', backgroundImage: `url(https://i.pinimg.com/originals/98/b9/4b/98b94bffc2ae72382a9ea0e2bd4ec9d4.jpg)`, backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat', width: '100%' }} >
+             <Paper style={{ backgroundColor: 'rgba(52, 52, 52, 0)'}} className={classes.paper} elevation={3}>
+                <h1 className={classes.title}>Registration</h1>
+            <form noValidate autoComplete='off' className={classes.form} onSubmit={signup} action="">
                 <Grid container>
                     <div>
-                    <Typography component='h1' variant='h5'>
-                        Registration
-                    </Typography>
                     {errorMessage ? <Alert severity="error">{errorMessage}</Alert> : null}
                     
                     </div>
                     <Grid>
-                    <TextField onChange={(e) => handleChange(e)} name='email' variant='outlined' required label='Email Address'/>
-                    <TextField onChange={(e) => handleChange(e)} type='password' name='password' variant='outlined' required label='Password'/>
-                    <TextField variant='outlined' type='password' required label='Password again'/>
+                    <TextField 
+                    onChange={(e) => handleChange(e)} 
+                    name='email' 
+                    variant='outlined' 
+                    required 
+                    label='Email Address'
+                    fullWidth
+                    InputLabelProps={{className: classes.input__label}}
+                    inputProps={{ className: classes.input }}
+                    color='secondary'
+                    className={classes.textfield}
+                    />
+                    <TextField 
+                    onChange={(e) => handleChange(e)} 
+                    type='password' 
+                    name='password' 
+                    variant='outlined' 
+                    required label='Password'
+                    fullWidth
+                    InputLabelProps={{className: classes.input__label}}
+                    inputProps={{ className: classes.input }}
+                    color='secondary'
+                    className={classes.textfield}
+                    />
+                    <TextField 
+                    variant='outlined' 
+                    type='password' 
+                    required label='Password again'
+                    fullWidth
+                    InputLabelProps={{className: classes.input__label}}
+                    inputProps={{ className: classes.input }}
+                    color='secondary'
+                    className={classes.textfield}
+                    />
                     </Grid>
-                    <Button variant = 'contained' color='primary' type='submit' disabled={loading}>
+                    <Button style={{ color: '#e9fdd2', margin: '15px auto 0', backgroundColor: "#8bc34a" }} variant = 'contained' color='primary' type='submit' disabled={loading}>
                         {loading ? <CircularProgress /> : 'Sign up'}
                     </Button>
                 </Grid>
             </form>
-        </Container>
+            </Paper>
+        </div>
     );
 };
 

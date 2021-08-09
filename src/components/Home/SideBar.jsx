@@ -12,6 +12,18 @@ const useStyles = makeStyles(theme => ({
     container: {
         padding: theme.spacing(2)
     },
+    root: {
+        background: 'linear-gradient(45deg, #58a9a7 30%, #58a9a7 90%)',
+        borderRadius: 3,
+        border: 0,
+        color: '#e5ecf4',
+        height: 48,
+        padding: '0 30px',
+        boxShadow: '0 3px 5px 2px rgba(126, 190, 202, .3)',
+      },
+    label: {
+    textTransform: 'capitalize',
+    },
 }))
 
 const SideBar = () => {
@@ -79,7 +91,10 @@ const SideBar = () => {
 
                 <Grid>
                     <Slider color="primary" value={price} onChange={handleChangePrice} valueLabelDisplay='auto' aria-labelledby='discrette-slider' min={14000} max={32000} />
-                    <Button onClick={resetPrice} variant='contained' color="white" >Reset</Button>
+                    <Button classes={{
+        root: classes.root, // class name, e.g. `classes-nesting-root-x`
+        label: classes.label, // class name, e.g. `classes-nesting-label-x`
+      }} onClick={resetPrice} variant='contained' >Reset</Button>
                 </Grid>
             </Paper>
         </Grid>

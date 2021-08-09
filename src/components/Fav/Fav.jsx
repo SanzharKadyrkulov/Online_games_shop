@@ -1,17 +1,10 @@
 import React, { useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import Table from '@material-ui/core/Table';
-import TableBody from '@material-ui/core/TableBody';
-import TableCell from '@material-ui/core/TableCell';
-import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
-import TableRow from '@material-ui/core/TableRow';
-import Paper from '@material-ui/core/Paper';
+
 import { useEffect } from 'react';
 import { useProducts } from '../../contexts/ProductContext';
-import { Container, Grid, Typography } from '@material-ui/core';
-import { useAuth } from '../../contexts/AuthContext';
-import { useParams } from 'react-router-dom';
+import { Grid } from '@material-ui/core';
+// import { useParams } from 'react-router-dom';
 import ProductCard from '../Home/ProductCard';
 import MainLayout from '../../layouts/MainLayouts';
 
@@ -28,10 +21,11 @@ const useStyles = makeStyles({
 
 export default function Cart() {
     const classes = useStyles();
-    const params = useParams()
+    // const params = useParams()
     const { fav, getFav, changeFavCount, history } = useProducts()
     useEffect(() => {
-        getFav()
+      getFav()
+      console.log("this is Item ", fav);
     }, [])
     // useEffect(() => {
     //     if (!localStorage.getItem('token')) {
@@ -96,8 +90,8 @@ export default function Cart() {
         // </TableContainer>
         <MainLayout>
 
-        <Container className={classes.cardGrid} maxWidth="md">
-        <Grid style={{marginTop:'20px', marginBottom:'20px'}} container spacing={4}>
+        <div style={{backgroundImage: "url(https://cdn.wallpapersafari.com/88/97/9dS6DT.jpg)"}} className={classes.cardGrid} maxWidth="md">
+        <Grid style={{marginTop:'0px', marginBottom:'0px'}} container spacing={4}>
           {fav.products && fav.products.map((product) => (
             <ProductCard key={product.item.id} item={product.item} />
           ))}
@@ -105,7 +99,7 @@ export default function Cart() {
         {/* <div style={{ marginLeft: '300px', marginTop: '20px' }}>
           <Pagination count={pages} color="primary" page={+page} onChange={handlePage} />
         </div> */}
-      </Container>
+      </div>
         </MainLayout>
 
     );
