@@ -14,7 +14,7 @@ export const useProducts = () => {
 
 const INIT_STATE = {
     productsData: [],
-    productDetails: {},
+    productDetails: null,
     cart: [],
     pages: 1,
     fav: []
@@ -205,7 +205,7 @@ const ProductContextProvider = ({ children }) => {
         addProductToCart,
         changeProductCount,
         favProductToCart,
-        changeFavCount
+        changeFavCount,
     }
     return (
         <productContext.Provider value={values}>
