@@ -9,7 +9,6 @@ import { CircularProgress, IconButton } from '@material-ui/core';
 import { useProducts } from '../../contexts/ProductContext';
 import SvgIcon from '@material-ui/core/SvgIcon';
 import RestoreIcon from '@material-ui/icons/Restore';
-import MainLayout from '../../layouts/MainLayouts';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -20,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
     margin: 'auto',
     maxWidth: '100%',
     maxHeight: '100%',
-    height: "90vh",
+    height: "100vh",
     position: 'relative',
     color: theme.palette.common.white,
     marginBottom: theme.spacing(4),
@@ -56,7 +55,6 @@ const ProductDetails = () => {
   const classes = useStyles();
 
   return (
-    <MainLayout>
       
     <>
       {productDetails ?
@@ -99,7 +97,6 @@ const ProductDetails = () => {
         <CircularProgress />
       }
     </>
-    </MainLayout>
   )
 }
 

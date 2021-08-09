@@ -5,7 +5,7 @@ import InstagramIcon from '@material-ui/icons/Instagram';
 import MusicNoteIcon from '@material-ui/icons/MusicNote';
 const Footer = () => {
   return (
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+    <Navbar collapseOnSelect expand="lg" style={{backgroundColor: '#264659'}} variant="dark">
       <Container>
         <Navbar.Brand href="#home">Bang Bang</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />

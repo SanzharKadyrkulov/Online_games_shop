@@ -14,6 +14,7 @@ import About from '../components/AboutUs/About';
 import Login from '../components/Auth/Login';
 import Registration from '../components/Auth/Registration';
 import ProtectedRoute from './ProtectedRoute';
+import ProductComments from '../components/Home/ProductComments';
 
 const Routes = () => {
     return (
@@ -31,6 +32,7 @@ const Routes = () => {
                     <ProtectedRoute exact path='/fav' component={Fav} />
                     <Route exact path='/editproduct/:id' component={EditProduct} />
                     <Route exact path='/details/:id' component={ProductDetails} />
+                    <Route exact path='/comments/:id' component={ProductComments}/>
                 </Switch>
                 {/* <Footer /> */}
             </ProductContextProvider>
