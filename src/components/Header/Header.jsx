@@ -27,7 +27,7 @@ const Header = () => {
 
   return (
     <>
-      <Navbar collapseOnSelect expand="md" style={{backgroundColor: '#264659'}} variant="dark">
+      <Navbar collapseOnSelect expand="md" style={{ backgroundColor: '#264659' }} variant="dark">
         <Container>
           <Navbar.Brand href="/">
             <img
@@ -46,7 +46,6 @@ const Header = () => {
               <Nav.Link href="/about">About us</Nav.Link>
               <Nav.Link href="/productlist" >Catalog</Nav.Link>
               <Nav.Link href="/chat">Chat</Nav.Link>
-              <Nav.Link href="/sale">Sale</Nav.Link>
               <Nav.Link href="/cart">Busket</Nav.Link>
               <Nav.Link href="/fav">Favorite</Nav.Link>
             </Nav>

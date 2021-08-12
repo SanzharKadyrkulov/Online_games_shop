@@ -7,7 +7,9 @@
       "type": "Mage",
       "animation": "https://a-static.besthdwallpaper.com/thunder-flash-selena-mobile-legends-ml-wallpaper-2880x960-67931_104.jpg",
       "price": "24000",
-      "likes": [],
+      "likes": [
+        "isakov@gmail.com"
+      ],
       "comments": [],
       "id": 1
     },
@@ -51,7 +53,12 @@
           "comment": "I love Bruno",
           "date": "2021-08-07T11:11:09.779Z"
         },
-        {}
+        {},
+        {
+          "email": "isakov@gmail.com",
+          "comment": "I too",
+          "date": "2021-08-11T04:17:49.880Z"
+        }
       ],
       "id": 3
     },
