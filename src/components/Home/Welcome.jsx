@@ -35,8 +35,8 @@ const Welcome = () => {
         <Grid container>
           <Grid item md={6}>
             <div className={classes.mainFeaturesPostContent}>
-              <Button target="blank" href="https://makers.kg/" variant="contained" color="secondary">
-                Наш тренер
+              <Button href="/productlist" variant="contained" style={{backgroundColor:'#19bbef'}}>
+                Get started
               </Button>
             </div>
           </Grid>

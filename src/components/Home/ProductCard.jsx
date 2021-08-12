@@ -6,6 +6,7 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
 import { useAuth } from '../../contexts/AuthContext';
 import CommentIcon from '@material-ui/icons/Comment';
+import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 
 
 
@@ -115,8 +116,13 @@ const ProductCard = ({ item }) => {
         }
         const data = await editProduct(id, productWithLike)        
         setLikes(newLike.length)
-    
-}
+  }
+  const isLiked = (productos) => {
+    if(productos.likes.includes(user.email)) {
+      return 'secondary'
+    }
+    return 'default'
+  }
 
   return (
     <Grid style={{ backgroundColor: `trasparent`}} item key={item.id} xs={12} sm={6} md={4}>
@@ -163,14 +169,14 @@ const ProductCard = ({ item }) => {
           >
             <AddShoppingCartIcon />
           </IconButton>
-          <FavoriteBorderIcon
+          <BookmarkBorderIcon
             color={checkItemInFav(item.id)}
             aria-label="add to shopping"
             onClick={() => favProductToCart(item)}
           />
           <h5>{likes}</h5>
           <FavoriteBorderIcon
-            color='primary'
+            color={isLiked(item)}
             aria-label="add to shopping"
             onClick={() => handleLikes(item.id, item)}
           />

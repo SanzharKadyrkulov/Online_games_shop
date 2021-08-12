@@ -10,6 +10,7 @@ import { Pagination } from "@material-ui/lab";
 import { useParams } from "react-router-dom";
 import { useAuth } from "../../contexts/AuthContext";
 import MainLayout from "../../layouts/MainLayouts";
+import { Form, FormControl } from "react-bootstrap";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -89,6 +90,13 @@ const ProductList = () => {
     getProductsData()
     setPage(page)
   }
+  const handleValue = (e) => {
+    const search = new URLSearchParams(history.location.search)
+    search.set('q', e.target.value)
+    search.set('_page', 1)
+    history.push(`${history.location.pathname}?${search.toString()}`)
+    getProductsData()
+  }
 
 useEffect(() => {
   setPage(getCurrentPage())
@@ -101,10 +109,18 @@ useEffect(() => {
       <div className={classes.mainContent}>
         <Container maxWidth='sm'>
           <Typography variant='h2' align='center' color='textPrimary' gutterBottom>Our Heroes!</Typography>
-
+          
           <div className={classes.mainButtons}>
             <Grid className={classes.blabla} container spacing={3} justify="center">
-
+            <Form inline>
+                  <FormControl
+                  style={{backgroundColor:'rgba(85, 130, 159, 0.2)'}}
+                    type="text"
+                    placeholder="Search"
+                    className="mr-sm-4"
+                    onChange={(e) => handleValue(e)}
+                  />
+                </Form>
               <Grid item>
                 {user && user.email === 'sancho@gmail.com' || user && user.email === 'isakov@gmail.com' ? <Button onClick={() => history.push("/addproduct")} variant="outlined" color="secondary">Add Hero</Button> : <></>}
                 

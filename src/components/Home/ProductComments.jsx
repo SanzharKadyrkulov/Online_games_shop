@@ -57,6 +57,14 @@ const useStyles = makeStyles((theme) => ({
         boxShadow: theme.shadows[5],
         padding: theme.spacing(2, 4, 3),
     },
+    input: {
+      color: "#e8c271",
+      borderRightColor: '#FFF'
+  },
+  input__label: {
+      color: "#f2e49d",
+      borderRightColor: '#FFF'
+  },
   }));
 
 const ProductComments = () => {
@@ -220,6 +228,8 @@ const ProductComments = () => {
                     color='secondary'
                     style={{width:'420px'}}
                     onChange={(e) => handleInput(e)}
+                    InputLabelProps={{className: classes.input__label}}
+                            inputProps={{ className: classes.input }}
                     />
                     <Button
                       type='submit  '
