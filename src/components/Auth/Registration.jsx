@@ -1,7 +1,7 @@
 import { Button, Container, Grid, TextField, Typography, makeStyles, Paper } from '@material-ui/core';
 import React from 'react';
 import { useState } from 'react';
-import { useHistory } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import MuiAlert from '@material-ui/lab/Alert';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -121,6 +121,9 @@ const Registration = () => {
                     color='secondary'
                     className={classes.textfield}
                     />
+                    <Typography style={{color: '#95cca5', margin: '10px auto 0', textAlign: "center"}}>
+                        Already have account? <Link style={{textDecoration: 'underline', color: "#53bb4c"}} to="/login">Sing in</Link>
+                    </Typography>
                     </Grid>
                     <Button style={{ color: '#e9fdd2', margin: '15px auto 0', backgroundColor: "#8bc34a" }} variant = 'contained' color='primary' type='submit' disabled={loading}>
                         {loading ? <CircularProgress /> : 'Sign up'}

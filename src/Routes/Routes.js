@@ -15,6 +15,8 @@ import Login from '../components/Auth/Login';
 import Registration from '../components/Auth/Registration';
 import ProtectedRoute from './ProtectedRoute';
 import ProductComments from '../components/Home/ProductComments';
+import OrderForm from '../OrderForm/OrderForm';
+import Thanks from '../OrderForm/Thanks';
 
 const Routes = () => {
     return (
@@ -33,6 +35,8 @@ const Routes = () => {
                     <Route exact path='/editproduct/:id' component={EditProduct} />
                     <Route exact path='/details/:id' component={ProductDetails} />
                     <Route exact path='/comments/:id' component={ProductComments}/>
+                    <Route exact path='/order' component={OrderForm}/>
+                    <Route exact path='/thanks' component={Thanks} />
                 </Switch>
                 {/* <Footer /> */}
             </ProductContextProvider>

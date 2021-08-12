@@ -123,7 +123,7 @@ const Login = () => {
                     color='secondary'
                     className={classes.textfield}/>
                     <Typography style={{color: '#95cca5', margin: '10px auto 0', textAlign: "center"}}>
-                        Already have account? <Link style={{textDecoration: 'underline', color: "#53bb4c"}} to="/registration">Sing up</Link>
+                    Don't have an account yet? <Link style={{textDecoration: 'underline', color: "#53bb4c"}} to="/registration">Sing up</Link>
                     </Typography>
                     </Grid>
                     <Button style={{ color: '#e9fdd2', margin: '15px auto 0', backgroundColor: "#8bc34a" }} variant = 'contained' color='primary' type='submit' disabled={loading}>

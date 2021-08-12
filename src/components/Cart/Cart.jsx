@@ -9,7 +9,7 @@ import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 import { useEffect } from 'react';
 import { useProducts } from '../../contexts/ProductContext';
-import { Typography } from '@material-ui/core';
+import { Button, Typography } from '@material-ui/core';
 import { useAuth } from '../../contexts/AuthContext';
 import { useParams } from 'react-router-dom';
 import MainLayout from "../../layouts/MainLayouts";
@@ -92,6 +92,11 @@ export default function Cart() {
                     <Typography variant="h5">
                         {cart.totalPrice}$
                     </Typography>
+                </TableCell>
+                <TableCell align="right">
+                    <Button onClick={() => history.push("/order")} className="btn-buy" style={{backgroundColor: "#78d7e3"}}>
+                      Buy
+                    </Button>
                 </TableCell>
             </TableRow>
         </TableBody>
