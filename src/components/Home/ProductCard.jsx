@@ -145,10 +145,10 @@ const ProductCard = ({ item }) => {
           </Typography>
         </CardContent>
         <CardActions>
-          <Button onClick={() => history.push(`/details/${item.id}`)} size="small" color="primary">
+          <Button onClick={() => history.push(`/details/${item.id}`)} size="small" >
             View
           </Button>
-          {user && user.email === 'sancho@gmail.com' || user && user.email === 'isakov@gmail.com' ? <><Button onClick={() => history.push(`/editproduct/${item.id}`)} size="small" color="primary">
+          {user && user.email === 'sancho@gmail.com' || user && user.email === 'isakov@gmail.com' ? <><Button onClick={() => history.push(`/editproduct/${item.id}`)} size="small" >
             Edit
           </Button>
             <IconButton
@@ -157,7 +157,6 @@ const ProductCard = ({ item }) => {
 
               aria-haspopup="true"
               onClick={() => deleteProduct(item.id)}
-              color="primary"
             >
               <DeleteIcon />
             </IconButton></> : <></>}
