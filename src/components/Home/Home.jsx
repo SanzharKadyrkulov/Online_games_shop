@@ -20,7 +20,6 @@ const Home = () => {
         <Grid className={classes.sideBar} spacing-md={3} spacing-sm={3}>
             <Welcome />
             <Content/>
-            <Advertising />
         </Grid>
         </MainLayout>
     );

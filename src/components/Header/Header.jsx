@@ -11,13 +11,13 @@ const Header = () => {
   const { history, getProductsData } = useProducts()
   const { user, logout } = useAuth()
 
-  const handleValue = (e) => {
-    const search = new URLSearchParams(history.location.search)
-    search.set('q', e.target.value)
-    search.set('_page', 1)
-    history.push(`${history.location.pathname}?${search.toString()}`)
-    getProductsData()
-  }
+  // const handleValue = (e) => {
+  //   const search = new URLSearchParams(history.location.search)
+  //   search.set('q', e.target.value)
+  //   search.set('_page', 1)
+  //   history.push(`${history.location.pathname}?${search.toString()}`)
+  //   getProductsData()
+  // }
   useEffect(() => {
     console.log(user);
   }, [user])
@@ -50,14 +50,14 @@ const Header = () => {
               <Nav.Link href="/fav">Favorite</Nav.Link>
             </Nav>
           </Navbar.Collapse>
-          <Form inline>
+          {/* <Form inline>
             <FormControl
               type="text"
               placeholder="Search"
               className="mr-sm-4"
               onChange={(e) => handleValue(e)}
             />
-          </Form>
+          </Form> */}
           {user ? (<>
             <div style={{ color: 'white', margin: '10px', border: '1px solid white', padding: '5px', borderRadius: '5px' }}>{user.email}</div>
             <Button onClick={handleLogout} variant="primary" >Log Out</Button>
