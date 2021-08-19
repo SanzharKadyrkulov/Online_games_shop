@@ -1,14 +1,14 @@
 
 import React from 'react';
 import { useEffect } from 'react';
-import { Container, Nav, Navbar, Form, FormControl, Button } from 'react-bootstrap';
+import { Container, Nav, Navbar, Button } from 'react-bootstrap';
 import { useAuth } from '../../contexts/AuthContext';
 import { useProducts } from '../../contexts/ProductContext';
 import Song from '../../Song/Song';
 import logo from './images.png';
 
 const Header = () => {
-  const { history, getProductsData } = useProducts()
+  const { history } = useProducts()
   const { user, logout } = useAuth()
 
   // const handleValue = (e) => {

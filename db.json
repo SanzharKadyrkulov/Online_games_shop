@@ -7,7 +7,9 @@
       "type": "Fighter",
       "price": "30000",
       "animation": "https://www.xtrafondos.com/wallpapers/ruby-revamp-de-mobile-legends-6433.jpg",
-      "likes": [],
+      "likes": [
+        "testUser@gmail.com"
+      ],
       "comments": [],
       "id": 1
     },
@@ -16,9 +18,11 @@
       "describtion": "Many years ago, enjoying the night opera performed by Cecilion was the most popular form of entertainment for the people of Avalor. It was always full house at the theatre, each time this famous Opera actor performed. Everyone was attracted by his indescribable handsomeness and talent. However, the applause, love and cheers from human beings didn’t make Cecilion happy. He was a Blood Demon, and it was hard for him to open his mind to humans. He had always tried hard, to conceal his true identity and blend in with human society.\n\n",
       "image": "https://plainmemory.com/wp-content/uploads/2020/07/mobile-legends-full-hd-wallpaper-17.jpg",
       "type": "Mage",
-      "price": "15000",
+      "price": "19000",
       "animation": "https://plainmemory.com/wp-content/uploads/2020/07/mobile-legends-full-hd-wallpaper-17.jpg",
-      "likes": [],
+      "likes": [
+        "testUser@gmail.com"
+      ],
       "comments": [],
       "id": 2
     },
@@ -28,10 +32,10 @@
       "image": "https://plainmemory.com/wp-content/uploads/2020/07/mobile-legends-full-hd-wallpaper-34.jpg",
       "type": "Marksman",
       "animation": "https://plainmemory.com/wp-content/uploads/2020/07/mobile-legends-full-hd-wallpaper-34.jpg",
-      "price": "24000",
+      "price": "27000",
       "likes": [
         "qwerty@gmail.com",
-        "germezz@germezz.com"
+        "testuser@gmail.com"
       ],
       "comments": [
         {
@@ -263,16 +267,13 @@
       "id": 20
     },
     {
-      "title": "Change",
-      "describtion": "Chang'e is the youngest disciple of the Great Dragon and from an early age, she exhibited amazing magical potential, quickly mastering the Great Dragon's greatest spell- The Scared Satellite. From then on, Chang'e earned the Great Dragon's eternal love. However, Chang'e had an energetic and fun-loving personality that gave the Great Dragon quite a few headaches.\n\nEvery time the Great Dragon, enjoyed a peaceful afternoon, he would most probably smell the rotten scent of trouble.",
+      "title": "Chang;e",
+      "describtion": "cz,fadhufadjhj",
       "image": "https://1.bp.blogspot.com/-bNM6cGzHgTg/X9LQvyZcZ7I/AAAAAAAADb0/-TzHrZ6nM340L8iYotesUnUt9stCDoMWQCLcBGAsYHQ/s0/91c3ca50c0827cc34d918c9c82d949c9.png",
       "type": "Mage",
-      "price": "28000",
+      "price": "27000",
+      "likes": [],
       "animation": "https://1.bp.blogspot.com/-bNM6cGzHgTg/X9LQvyZcZ7I/AAAAAAAADb0/-TzHrZ6nM340L8iYotesUnUt9stCDoMWQCLcBGAsYHQ/s0/91c3ca50c0827cc34d918c9c82d949c9.png",
-      "likes": [
-        "qwerty@gmail.com"
-      ],
-      "comments": [],
       "id": 21
     }
   ]
