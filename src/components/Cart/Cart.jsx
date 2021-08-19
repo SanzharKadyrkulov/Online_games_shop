@@ -42,6 +42,9 @@ export default function Cart() {
 // },[params])
   
   const handleCountChange = (count, id) => {
+    if(count<1){
+      count= 1
+    }
     changeProductCount(count,id)
   }
 
