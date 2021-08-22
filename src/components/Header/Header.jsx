@@ -5,7 +5,7 @@ import { Container, Nav, Navbar, Button } from 'react-bootstrap';
 import { useAuth } from '../../contexts/AuthContext';
 import { useProducts } from '../../contexts/ProductContext';
 import Song from '../../Song/Song';
-import logo from './images.png';
+import logo from './logo-new.png';
 
 const Header = () => {
   const { history } = useProducts()
@@ -43,9 +43,9 @@ const Header = () => {
             <Nav className="mr-auto">
               <Song />
               <Nav.Link href="/">Home</Nav.Link>
-              <Nav.Link href="/about">About us</Nav.Link>
+              <Nav.Link href="">About us</Nav.Link>
               <Nav.Link href="/productlist" >Catalog</Nav.Link>
-              <Nav.Link href="/chat">Chat</Nav.Link>
+              <Nav.Link href="">Chat</Nav.Link>
               <Nav.Link href="/cart">Busket</Nav.Link>
               <Nav.Link href="/fav">Favorite</Nav.Link>
             </Nav>

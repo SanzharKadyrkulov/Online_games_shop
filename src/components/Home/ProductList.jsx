@@ -105,7 +105,7 @@ useEffect(() => {
   return (
     <MainLayout>
 
-    <main style={{ backgroundImage: `url(https://images.alphacoders.com/529/529250.jpg)`, backgroundSize: "cover", backgroundPosition: "top" }}>
+    <main style={{ marginBottom:'15px', backgroundImage: `url(https://images.alphacoders.com/529/529250.jpg)`, backgroundSize: "cover", backgroundPosition: "top" }}>
       <div className={classes.mainContent}>
         <Container maxWidth='sm'>
           <Typography variant='h2' align='center' color='textPrimary' gutterBottom>Our Heroes!</Typography>
@@ -124,8 +124,8 @@ useEffect(() => {
               <Grid item>
                 {user && user.email === 'sancho@gmail.com' || user && user.email === 'isakov@gmail.com' ? <Button onClick={() => history.push("/addproduct")} variant="outlined" color="secondary">Add Hero</Button> : <></>}
                 
-              </Grid>
               <SideBar />
+              </Grid>
             </Grid>
           </div>
         </Container>
@@ -135,10 +135,10 @@ useEffect(() => {
           {productsData && productsData.map((item) => (
             <ProductCard key={item.id} item={item} />
           ))}
-        </Grid>
-        <div style={{ marginLeft: '280px' }}>
-          <Pagination style={{textColor: "white", margin: '10px auto !important'}} count={pages} color="primary" page={+page} onChange={handlePage} />
+        <div style={{margin: '0 auto'}}>
+          <Pagination style={{textColor: "white", }} count={pages} color="primary" page={+page} onChange={handlePage} />
         </div>
+        </Grid>
       </Container>
     </main>
     </MainLayout>
