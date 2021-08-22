@@ -11,9 +11,9 @@ export default function Song() {
 
     return (
         <div>
-            <h6 style={{ color: 'red' }}>If BoReD <SentimentVeryDissatisfiedSharpIcon /></h6>
-            <MusicNoteIcon style={{ color: 'blue' }} onClick={() => play()} />
-            <MusicOffIcon style={{ color: 'red' }} onClick={() => stop()} />
+            <h6 style={{ color: '#b8edfe' }}>If BoReD <SentimentVeryDissatisfiedSharpIcon /></h6>
+            <MusicNoteIcon style={{ color: '#19bbef' }} onClick={() => play()} />
+            <MusicOffIcon style={{ color: '#0d6efd' }} onClick={() => stop()} />
         </div >
     );
 };

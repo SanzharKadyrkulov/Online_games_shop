@@ -12,7 +12,7 @@ const Footer = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link href="/"><HomeIcon color="secondary" /></Nav.Link>
-            <Nav.Link target='blank' href="https://ok.ru/profile/548335117050">Sanzharidze</Nav.Link>
+            <Nav.Link target='blank' href="https://t.me/sanzharidze">Sanzharidze</Nav.Link>
             <Nav.Link target='blank' href="https://www.instagram.com/?hl=ru"> Eslichtoibahnul_1 <InstagramIcon /></Nav.Link>
             <Nav.Link target='blank' href="https://m.mobilelegends.com/en">More details</Nav.Link>
             <Nav.Link target='blank' href="https://www.youtube.com/watch?v=WW_bjlhHnQI">Game Music <MusicNoteIcon /></Nav.Link>
