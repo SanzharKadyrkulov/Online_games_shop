@@ -141,7 +141,7 @@ const ProductList = () => {
           </div>
         </Container>
       </main>
-    </MainLayout>
+    </MainLayout >
   );
 };
 
