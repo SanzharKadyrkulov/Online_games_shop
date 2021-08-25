@@ -63,13 +63,13 @@ const ProductList = () => {
   const classes = useStyles()
   const params = useParams()
   const { productsData, getProductsData, pages, history } = useProducts()
-  const {user, clearState} = useAuth()
-//   useEffect(() => {
-//     if(!localStorage.getItem('token')){
-//       history.push('/')
-//       alert("Login or Signup")
-//     }
-// },[params])
+  const { user, clearState } = useAuth()
+  //   useEffect(() => {
+  //     if(!localStorage.getItem('token')){
+  //       history.push('/')
+  //       alert("Login or Signup")
+  //     }
+  // },[params])
   const getCurrentPage = () => {
     const search = new URLSearchParams(window.location.search)
 
@@ -98,49 +98,49 @@ const ProductList = () => {
     getProductsData()
   }
 
-useEffect(() => {
-  setPage(getCurrentPage())
-}, [params])
+  useEffect(() => {
+    setPage(getCurrentPage())
+  }, [params])
 
   return (
     <MainLayout>
 
-    <main style={{ backgroundImage: `url(https://images.alphacoders.com/529/529250.jpg)`, backgroundSize: "cover", backgroundPosition: "top" }}>
-      <div className={classes.mainContent}>
-        <Container maxWidth='sm'>
-          <Typography variant='h2' align='center' color='textPrimary' gutterBottom>Our Heroes!</Typography>
-          
-          <div className={classes.mainButtons}>
-            <Grid className={classes.blabla} container spacing={3} justify="center">
-            <Form inline>
+      <main style={{ backgroundImage: `url(https://www.pixelstalk.net/wp-content/uploads/2016/05/Mortal-Kombat-Wallpapers-HD.jpg)`, backgroundSize: "cover", backgroundPosition: "top" }}>
+        <div className={classes.mainContent}>
+          <Container maxWidth='sm'>
+            <Typography variant='h2' align='center' color='textPrimary' gutterBottom>Our Heroes!</Typography>
+
+            <div className={classes.mainButtons}>
+              <Grid className={classes.blabla} container spacing={3} justify="center">
+                <Form inline>
                   <FormControl
-                  style={{backgroundColor:'rgba(85, 130, 159, 0.2)'}}
+                    style={{ backgroundColor: 'rgba(85, 130, 159, 0.2)' }}
                     type="text"
                     placeholder="Search"
                     className="mr-sm-4"
                     onChange={(e) => handleValue(e)}
                   />
                 </Form>
-              <Grid item>
-                {user && user.email === 'sancho@gmail.com' || user && user.email === 'isakov@gmail.com' ? <Button onClick={() => history.push("/addproduct")} variant="outlined" color="secondary">Add Hero</Button> : <></>}
-                
+                <Grid item>
+                  {user && user.email === 'isakov@gmail.com' ? <Button onClick={() => history.push("/addproduct")} variant="outlined" color="secondary">Add Hero</Button> : <></>}
+
+                </Grid>
+                <SideBar />
               </Grid>
-              <SideBar />
-            </Grid>
+            </div>
+          </Container>
+        </div>
+        <Container className={classes.cardGrid} maxWidth="md">
+          <Grid container spacing={4}>
+            {productsData && productsData.map((item) => (
+              <ProductCard key={item.id} item={item} />
+            ))}
+          </Grid>
+          <div style={{ marginLeft: '280px' }}>
+            <Pagination style={{ textColor: "white", margin: '10px auto !important' }} count={pages} color="primary" page={+page} onChange={handlePage} />
           </div>
         </Container>
-      </div>
-      <Container className={classes.cardGrid} maxWidth="md">
-        <Grid container spacing={4}>
-          {productsData && productsData.map((item) => (
-            <ProductCard key={item.id} item={item} />
-          ))}
-        </Grid>
-        <div style={{ marginLeft: '280px' }}>
-          <Pagination style={{textColor: "white", margin: '10px auto !important'}} count={pages} color="primary" page={+page} onChange={handlePage} />
-        </div>
-      </Container>
-    </main>
+      </main>
     </MainLayout>
   );
 };

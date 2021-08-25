@@ -28,10 +28,7 @@ const useStyles = makeStyles((theme) => ({
     backgroundPosition: 'top',
     marginBottom: theme.spacing(0)
   },
-  //   image: {
-  //     width: 200,
-  //     height: "100%",
-  //   },
+
   img: {
     margin: 'auto',
     display: 'block',
@@ -55,43 +52,43 @@ const ProductDetails = () => {
   const classes = useStyles();
 
   return (
-      
+
     <>
       {productDetails ?
 
 
-          <Paper style={{ backgroundImage: `url(${productDetails.animation})`}} className={classes.paper}>
-            <Paper style={{backgroundColor: '#00000000', color:'white', maxWidth: "300px"}}  spacing={2}>
-              <Grid item xs={12} sm container>
-                <Grid item xs container direction="column" spacing={2}>
-                  <Grid item xs>
-                    <Typography gutterBottom variant="h3">
-                      {productDetails.title}
-                    </Typography>
-                    <Typography variant="h6" gutterBottom>
-                      {productDetails.type}
-                    </Typography>
-                    <Typography variant="p" >
-                      {productDetails.describtion}
-                    </Typography>
-                    <Typography variant="h4">{productDetails.price}$</Typography>
-                  </Grid>
-                  <Grid item>
-                    <IconButton
-                      edge="end"
-                      aria-label="account of current user"
-                      aria-haspopup="true"
-                      color="inherit"
-                      onClick={() => history.push('/productlist')}
-                    >
-                      <RestoreIcon style={{border:'2px solid rgba(52, 52, 52, 0.5)', borderRadius:"50%"}} color="white" />
+        <Paper style={{ backgroundImage: `url(${productDetails.animation})` }} className={classes.paper}>
+          <Paper style={{ backgroundColor: '#00000000', color: 'white', maxWidth: "300px" }} spacing={2}>
+            <Grid item xs={12} sm container>
+              <Grid item xs container direction="column" spacing={2}>
+                <Grid item xs>
+                  <Typography gutterBottom variant="h3">
+                    {productDetails.title}
+                  </Typography>
+                  <Typography variant="h6" gutterBottom>
+                    {productDetails.type}
+                  </Typography>
+                  <Typography variant="p" >
+                    {productDetails.describtion}
+                  </Typography>
+                  <Typography variant="h4">{productDetails.price}$</Typography>
+                </Grid>
+                <Grid item>
+                  <IconButton
+                    edge="end"
+                    aria-label="account of current user"
+                    aria-haspopup="true"
+                    color="inherit"
+                    onClick={() => history.push('/productlist')}
+                  >
+                    <RestoreIcon style={{ border: '2px solid rgba(52, 52, 52, 0.5)', borderRadius: "50%" }} color="white" />
 
-                    </IconButton>
-                  </Grid>
+                  </IconButton>
                 </Grid>
               </Grid>
-            </Paper>
+            </Grid>
           </Paper>
+        </Paper>
 
         :
         <CircularProgress />

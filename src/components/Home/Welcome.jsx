@@ -29,13 +29,13 @@ const Welcome = () => {
   const classes = useStyles()
   return (
     <Paper className={classes.mainFeaturesPost}
-      style={{ backgroundImage: `url(https://sm.ign.com/ign_ru/screenshot/default/kopiia-logo_h5c8.jpg)`, backgroundSize: "cover", backgroundPosition: "center" }}>
+      style={{ backgroundImage: `url(https://www.meme-arsenal.com/memes/d4d11cd156701b75e0577a8fad5286ad.jpg)`, backgroundSize: "cover", backgroundPosition: "center" }}>
       <Container fixed>
         <div className={classes.overlay} />
         <Grid container>
           <Grid item md={6}>
             <div className={classes.mainFeaturesPostContent}>
-              <Button href="/productlist" variant="contained" style={{backgroundColor:'#19bbef'}}>
+              <Button href="/productlist" variant="contained" style={{ backgroundColor: 'white' }}>
                 Get started
               </Button>
             </div>

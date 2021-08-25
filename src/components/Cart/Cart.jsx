@@ -21,7 +21,7 @@ const useStyles = makeStyles({
     minWidth: 650,
   },
   tableCellImg: {
-      width: 50,
+    width: 50,
   }
 });
 
@@ -30,81 +30,81 @@ const useStyles = makeStyles({
 export default function Cart() {
   const classes = useStyles();
   const params = useParams()
-    const {cart, getCart, changeProductCount, history} = useProducts()
+  const { cart, getCart, changeProductCount, history } = useProducts()
   useEffect(() => {
     getCart()
-  },[])
-//   useEffect(() => {
-//     if(!localStorage.getItem('token')){
-//       history.push('/')
-//       alert("Login or Signup")
-//     }
-// },[params])
-  
+  }, [])
+  //   useEffect(() => {
+  //     if(!localStorage.getItem('token')){
+  //       history.push('/')
+  //       alert("Login or Signup")
+  //     }
+  // },[params])
+
   const handleCountChange = (count, id) => {
-    if(count<1){
-      count= 1
+    if (count < 1) {
+      count = 1
     }
-    changeProductCount(count,id)
+    changeProductCount(count, id)
   }
 
   return (
     <HeaderLayout>
 
-    <TableContainer component={Paper}>
-      <Table className={classes.table} aria-label="caption table">
-        
-        <TableHead>
-          <TableRow>
-            <TableCell>Image</TableCell>
-            <TableCell align="right">Title</TableCell>
-            <TableCell align="right">Price</TableCell>
-            <TableCell align="right">Count</TableCell>
-            <TableCell align="right">SubPrice</TableCell>
-          </TableRow>
-        </TableHead>
-        <TableBody>
-            {cart.products &&
-            cart.products.map(product => (
-                <TableRow>
-                    <TableCell>
-                        <img className={classes.tableCellImg} src = {product.item.image} alt={product.item.title}/>
-                    </TableCell>
-                    <TableCell align="right">
-                        {product.item.title}
-                    </TableCell>
-                    <TableCell align="right">
-                        {product.item.price}
-                    </TableCell>
-                    <TableCell align="right">
-                        <input type="number"  value={product.count} onChange={(e) => handleCountChange(e.target.value, product.item.id)}/>
-                    </TableCell>
-                    <TableCell align="right">
-                        {product.subPrice}
-                    </TableCell>
-                </TableRow>
-            ))}
+      <TableContainer component={Paper}>
+        <Table className={classes.table} aria-label="caption table">
+
+          <TableHead>
             <TableRow>
-                <TableCell rowSpan={3}/>
-                <TableCell colSpan={2}>
-                    <Typography variant="h5">
-                        Total:
-                    </Typography>
-                </TableCell>
-                <TableCell align="right">
-                    <Typography variant="h5">
-                        {cart.totalPrice}$
-                    </Typography>
-                </TableCell>
-                <TableCell align="right">
-                    <Button onClick={() => history.push("/order")} className="btn-buy" style={{backgroundColor: "#78d7e3"}}>
-                      Buy
-                    </Button>
-                </TableCell>
+              <TableCell>Image</TableCell>
+              <TableCell align="right">Title</TableCell>
+              <TableCell align="right">Price</TableCell>
+              <TableCell align="right">Count</TableCell>
+              <TableCell align="right">SubPrice</TableCell>
             </TableRow>
-        </TableBody>
-      </Table>
-    </TableContainer>
+          </TableHead>
+          <TableBody>
+            {cart.products &&
+              cart.products.map(product => (
+                <TableRow>
+                  <TableCell>
+                    <img className={classes.tableCellImg} src={product.item.image} alt={product.item.title} />
+                  </TableCell>
+                  <TableCell align="right">
+                    {product.item.title}
+                  </TableCell>
+                  <TableCell align="right">
+                    {product.item.price}
+                  </TableCell>
+                  <TableCell align="right">
+                    <input type="number" value={product.count} onChange={(e) => handleCountChange(e.target.value, product.item.id)} />
+                  </TableCell>
+                  <TableCell align="right">
+                    {product.subPrice}
+                  </TableCell>
+                </TableRow>
+              ))}
+            <TableRow>
+              <TableCell rowSpan={3} />
+              <TableCell colSpan={2}>
+                <Typography variant="h5">
+                  Total:
+                </Typography>
+              </TableCell>
+              <TableCell align="right">
+                <Typography variant="h5">
+                  {cart.totalPrice}$
+                </Typography>
+              </TableCell>
+              <TableCell align="right">
+                <Button onClick={() => history.push("/order")} className="btn-buy" style={{ backgroundColor: "black", color: "white" }}>
+                  Buy
+                </Button>
+              </TableCell>
+            </TableRow>
+          </TableBody>
+        </Table>
+      </TableContainer>
     </HeaderLayout>
   );
 }
