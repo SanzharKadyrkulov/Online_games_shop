@@ -2,10 +2,8 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import AddProduct from '../Admin/AddProduct';
 import EditProduct from '../Admin/EditProduct';
-import Footer from '../components/Footer/Footer';
 import Fav from '../components/Fav/Fav';
 import Cart from '../components/Cart/Cart';
-import Header from '../components/Header/Header';
 import Home from '../components/Home/Home';
 import ProductDetails from '../components/Home/ProductDetails';
 import ProductList from '../components/Home/ProductList';
@@ -32,8 +30,8 @@ const Routes = () => {
                     <ProtectedRoute exact path='/fav' component={Fav} />
                     <Route exact path='/editproduct/:id' component={EditProduct} />
                     <Route exact path='/details/:id' component={ProductDetails} />
-                    <Route exact path='/comments/:id' component={ProductComments}/>
-                    <Route exact path='/order' component={OrderForm}/>
+                    <Route exact path='/comments/:id' component={ProductComments} />
+                    <Route exact path='/order' component={OrderForm} />
                     <Route exact path='/thanks' component={Thanks} />
                 </Switch>
                 {/* <Footer /> */}

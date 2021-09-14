@@ -20,9 +20,9 @@ const useStyles = makeStyles(theme => ({
         height: 48,
         padding: '0 30px',
         boxShadow: '0 3px 5px 2px rgba(126, 190, 202, .3)',
-      },
+    },
     label: {
-    textTransform: 'capitalize',
+        textTransform: 'capitalize',
     },
 }))
 
@@ -76,25 +76,23 @@ const SideBar = () => {
     }
 
     return (
-        <Grid  container md={3}>
-            <Paper style={{  backgroundSize: "cover", backgroundPosition: "top", backgroundColor: 'transparent' }}
+        <Grid container md={3}>
+            <Paper style={{ backgroundSize: "cover", backgroundPosition: "top", backgroundColor: 'transparent' }}
                 elevation={2} className={classes.paper}>
                 <FormControl component='fieldset'>
                     <FormLabel component='legend'>Type</FormLabel>
-                    <RadioGroup value={type} onChange={handleChangeType}>
-                        <FormControlLabel value='Fighter' control={<Radio />} label="Fighter" />
-                        <FormControlLabel value='Mage' control={<Radio />} label="Mage" />
-                        <FormControlLabel value='Marksman' control={<Radio />} label="Marksman" />
-                        {/* <FormControlLabel value='all' control={<Radio />} label="All" /> */}
+                    <RadioGroup value={type} onChange={handleChangeType} style={{ color: 'white' }}>
+                        <FormControlLabel value='Боец' control={<Radio />} label="Боец" />
+                        <FormControlLabel value='Маг' control={<Radio />} label="Маг" />
                     </RadioGroup>
                 </FormControl>
 
                 <Grid>
                     <Slider color="primary" value={price} onChange={handleChangePrice} valueLabelDisplay='auto' aria-labelledby='discrette-slider' min={14000} max={32000} />
                     <Button classes={{
-        root: classes.root, // class name, e.g. `classes-nesting-root-x`
-        label: classes.label, // class name, e.g. `classes-nesting-label-x`
-      }} onClick={resetPrice} variant='contained' >Reset</Button>
+                        root: classes.root, // class name, e.g. `classes-nesting-root-x`
+                        label: classes.label, // class name, e.g. `classes-nesting-label-x`
+                    }} onClick={resetPrice} variant='contained' >Reset</Button>
                 </Grid>
             </Paper>
         </Grid>
